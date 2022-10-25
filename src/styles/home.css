@@ -69,3 +69,25 @@
   background-color: #df2020;
   color: #fff;
 }
+
+/* feature */
+.featute__subtitle {
+  font-size: 1.4rem;
+  color: #df2020;
+}
+.feature__title {
+  margin-top: 1.2rem;
+  font-size: 2.3rem;
+  line-height: 2.7rem;
+  color: #212245;
+  font-weight: 700;
+}
+.feature__title span {
+  color: #df2020;
+}
+.feature__text {
+  color: #686877;
+}
+.feature__item p {
+  color: #686877;
+}
