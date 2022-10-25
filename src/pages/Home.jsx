@@ -16,6 +16,8 @@ import humburger from '../assets/images/hamburger.png';
 import pizza from '../assets/images/pizza.png';
 import bread from '../assets/images/bread.png';
 import ProductCart from '../components/UI/ProductCart/ProductCart';
+import { useState } from 'react';
+import { useEffect } from 'react';
 
 const featureData = [
   { title: 'Quick Delivery', desc: 'Lorem ipsum dolor, sit amet consectetur adipisicing elit. Minus, doloremque.', imgUrl: feature01 },
@@ -24,6 +26,28 @@ const featureData = [
 ];
 
 const Home = () => {
+  //section category product
+  const [category, setCategory] = useState('ALL');
+  const [allProduct, setAllProducts] = useState(products);
+
+  useEffect(() => {
+    if (category === 'All') {
+      setAllProducts(products);
+    }
+    if (category === 'Burger') {
+      const filterProducts = products.filter((item) => item.category === 'Burger');
+      setAllProducts(filterProducts);
+    }
+    if (category === 'Pizza') {
+      const filterProducts = products.filter((item) => item.category === 'Pizza');
+      setAllProducts(filterProducts);
+    }
+    if (category === 'Bread') {
+      const filterProducts = products.filter((item) => item.category === 'Bread');
+      setAllProducts(filterProducts);
+    }
+  }, [category]);
+
   return (
     <Helmet title={'home'}>
       <section className="spotlight__section">
@@ -90,7 +114,7 @@ const Home = () => {
               <p className="feature__text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Earum nihil</p>
             </Col>
             {featureData.map((item, index) => (
-              <Col lg="4" md="14" className="mt-5">
+              <Col lg="4" md="14" className="mt-5" key={index}>
                 <div className="feature__item text-center px-5">
                   <img src={item.imgUrl} alt={item.title} className="w-25 mb-3" />
                   <h5 className="fw-bold">{item.title}</h5>
@@ -110,22 +134,24 @@ const Home = () => {
             </Col>
             <Col lg="12" className="mb-3">
               <div className="food__category text-center mt-4">
-                <button className="food__btn">All</button>
-                <button className="food__btn">
+                <button className={`food__btn ${category === 'All' ? 'foodBtnActive ' : ''}`} onClick={() => setCategory('All')}>
+                  All
+                </button>
+                <button className={`food__btn ${category === 'Burger' ? 'foodBtnActive ' : ''}`} onClick={() => setCategory('Burger')}>
                   <img src={humburger} alt="" />
                   Burger
                 </button>
-                <button className="food__btn">
+                <button className={`food__btn ${category === 'Pizza' ? 'foodBtnActive ' : ''}`} onClick={() => setCategory('Pizza')}>
                   <img src={pizza} alt="" />
                   Pizza
                 </button>
-                <button className="food__btn">
+                <button className={`food__btn ${category === 'Bread' ? 'foodBtnActive ' : ''}`} onClick={() => setCategory('Bread')}>
                   <img src={bread} alt="" />
                   Bread
                 </button>
               </div>
             </Col>
-            {products.map((item, index) => (
+            {allProduct.map((item, index) => (
               <Col lg="3" md="6" key={index} className="mt-4">
                 <ProductCart item={item} />
               </Col>

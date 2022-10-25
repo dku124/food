@@ -21,7 +21,7 @@ const Header = () => {
   const headerRef = useRef(null);
   const stickyHeader = () => {
     window.addEventListener('scroll', () => {
-      if (document.body.scrollTop > 1 || document.documentElement.scrollTop > 70) {
+      if (document.body.scrollTop > 1 || document.documentElement.scrollTop > 1) {
         headerRef.current.classList.add('sticky__header');
       } else {
         headerRef.current.classList.remove('sticky__header');
