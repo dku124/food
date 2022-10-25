@@ -10,6 +10,13 @@ import feature01 from '../assets/images/service-01.png';
 import feature02 from '../assets/images/service-02.png';
 import feature03 from '../assets/images/service-03.png';
 
+// section category product
+import products from '../assets/fake-data/products';
+import humburger from '../assets/images/hamburger.png';
+import pizza from '../assets/images/pizza.png';
+import bread from '../assets/images/bread.png';
+import ProductCart from '../components/UI/ProductCart/ProductCart';
+
 const featureData = [
   { title: 'Quick Delivery', desc: 'Lorem ipsum dolor, sit amet consectetur adipisicing elit. Minus, doloremque.', imgUrl: feature01 },
   { title: 'Super Dine In', desc: 'Lorem ipsum dolor, sit amet consectetur adipisicing elit. Minus, doloremque.', imgUrl: feature02 },
@@ -89,6 +96,38 @@ const Home = () => {
                   <h5 className="fw-bold">{item.title}</h5>
                   <p>{item.desc}</p>
                 </div>
+              </Col>
+            ))}
+          </Row>
+        </Container>
+      </section>
+
+      <section>
+        <Container>
+          <Row>
+            <Col lg="12" className="text-center">
+              <h3>Popular Foods</h3>
+            </Col>
+            <Col lg="12" className="mb-3">
+              <div className="food__category text-center mt-4">
+                <button className="food__btn">All</button>
+                <button className="food__btn">
+                  <img src={humburger} alt="" />
+                  Burger
+                </button>
+                <button className="food__btn">
+                  <img src={pizza} alt="" />
+                  Pizza
+                </button>
+                <button className="food__btn">
+                  <img src={bread} alt="" />
+                  Bread
+                </button>
+              </div>
+            </Col>
+            {products.map((item, index) => (
+              <Col lg="3" md="6" key={index} className="mt-4">
+                <ProductCart item={item} />
               </Col>
             ))}
           </Row>

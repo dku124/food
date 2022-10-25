@@ -15,3 +15,7 @@
   font-size: 1.1rem;
   margin-bottom: 0;
 }
+.product__price {
+  font-weight: 600;
+  color: #df2020;
+}

@@ -91,3 +91,35 @@
 .feature__item p {
   color: #686877;
 }
+
+/* category */
+
+.food__category {
+  background-color: #df2020;
+  padding: 1rem;
+  border-radius: 10px;
+}
+.food__category button {
+  padding: 8px 20px;
+  background-color: transparent;
+  border: 0;
+  color: #fff;
+  margin: 0 10px;
+  line-height: 26px;
+  border-radius: 10px;
+  font-weight: 600;
+  transition: 0.4s;
+}
+
+.food__category button img {
+  width: 26px;
+  margin-right: 6px;
+}
+.food__category button:hover {
+  background-color: #fff;
+  color: #df2020;
+}
+.footBtnActive {
+  background-color: #fff;
+  color: #df2020;
+}
