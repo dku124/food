@@ -4,6 +4,7 @@ import Helmet from '../components/Helmet/Helmet';
 import heroImg from '../assets/images/hero.png';
 import '../styles/home.css';
 import { Link } from 'react-router-dom';
+import Category from '../components/UI/Category/Category';
 
 const Home = () => {
   return (
@@ -53,6 +54,10 @@ const Home = () => {
             </Col>
           </Row>
         </Container>
+      </section>
+
+      <section>
+        <Category />
       </section>
     </Helmet>
   );
