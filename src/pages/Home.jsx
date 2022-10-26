@@ -52,6 +52,12 @@ const Home = () => {
   }, [category]);
 
   //hot pizza
+  const [hotPizza, setHotPizza] = useState(products);
+  useEffect(() => {
+    const filterHotPizza = products.filter((item) => item.category === 'Pizza');
+    const sliceHotPizza = filterHotPizza.slice(0, 4);
+    setHotPizza(sliceHotPizza);
+  }, []);
 
   return (
     <Helmet title={'home'}>
@@ -205,8 +211,13 @@ const Home = () => {
         <Container>
           <Row>
             <Col lg="12">
-              <h2>Hot Pizza</h2>
+              <h2 className="text-center">Hot Pizza</h2>
             </Col>
+            {hotPizza.map((item, index) => (
+              <Col lg="3" md="6" key={index} className="mt-4">
+                <ProductCart item={item} />
+              </Col>
+            ))}
           </Row>
         </Container>
       </section>

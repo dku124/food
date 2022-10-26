@@ -134,8 +134,8 @@
 }
 .list-group-item {
   margin-top: 1rem;
-  border: 0;
-  background-color: transparent;
+  border: 0 !important;
+  background-color: transparent !important;
 }
 .list-group-item p {
   margin-bottom: 0;

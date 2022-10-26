@@ -1,6 +1,6 @@
 import React from 'react';
 import { useRef, useEffect } from 'react';
-import { Link, Navigate, NavLink } from 'react-router-dom';
+import { Link, NavLink } from 'react-router-dom';
 import { Container } from 'reactstrap';
 import logo from '../../assets/images/res-logo.png';
 
