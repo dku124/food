@@ -22,6 +22,10 @@ import { useEffect } from 'react';
 // why tasty treat
 import location from '../assets/images/location.png';
 
+//  Testimonial
+import network from '../assets/images/network.png';
+import Testimonial from '../components/UI/Slider/Testimonial';
+
 const featureData = [
   { title: 'Quick Delivery', desc: 'Lorem ipsum dolor, sit amet consectetur adipisicing elit. Minus, doloremque.', imgUrl: feature01 },
   { title: 'Super Dine In', desc: 'Lorem ipsum dolor, sit amet consectetur adipisicing elit. Minus, doloremque.', imgUrl: feature02 },
@@ -51,7 +55,7 @@ const Home = () => {
     }
   }, [category]);
 
-  //hot pizza
+  //section hot pizza
   const [hotPizza, setHotPizza] = useState(products);
   useEffect(() => {
     const filterHotPizza = products.filter((item) => item.category === 'Pizza');
@@ -171,14 +175,14 @@ const Home = () => {
         </Container>
       </section>
 
-      <section>
+      <section className="pb-0">
         <Container>
           <Row>
             <Col lg="6" md="6">
               <img src={location} alt="" className="w-100" />
             </Col>
             <Col lg="6" md="6">
-              <h2 className="tasty__title">
+              <h2 className="section__title">
                 Why <span>tasty treat</span>
               </h2>
               <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Repellendus totam excepturi consectetur ad sunt officiis veritatis ratione</p>
@@ -207,7 +211,7 @@ const Home = () => {
         </Container>
       </section>
 
-      <section>
+      <section className="pt-0">
         <Container>
           <Row>
             <Col lg="12">
@@ -218,6 +222,29 @@ const Home = () => {
                 <ProductCart item={item} />
               </Col>
             ))}
+          </Row>
+        </Container>
+      </section>
+
+      <section>
+        <Container>
+          <Row>
+            <Col lg="6">
+              <h3 className="section__subtitle">Testimonial</h3>
+              <h2 className="section__title mt-4">
+                What our <span>custormers</span> are saying
+              </h2>
+              <p className="mt-4">
+                Lorem ipsum dolor, sit amet consectetur adipisicing elit. Repellendus totam excepturi consectetur ad sunt officiis veritatis ratione
+              </p>
+
+              <div className="mt-5">
+                <Testimonial />
+              </div>
+            </Col>
+            <Col lg="6">
+              <img src={network} alt="" className="w-100" />
+            </Col>
           </Row>
         </Container>
       </section>

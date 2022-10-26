@@ -125,11 +125,16 @@
 }
 
 /* why tasty treat */
-.tasty__title {
+.section__title {
   color: #212245;
-  font-size: 3rem;
+  font-size: 2rem;
 }
-.tasty__title span {
+.section__title span {
+  color: #df2020;
+}
+.section__subtitle {
+  font-size: 1.2rem;
+  font-weight: 500;
   color: #df2020;
 }
 .list-group-item {
