@@ -42,6 +42,7 @@ h2 {
 section {
   padding: 60px 0px;
 }
+
 .logo {
   display: flex;
   flex-direction: column;
@@ -54,4 +55,40 @@ section {
 }
 .logo img {
   width: 40%;
+}
+.section__title {
+  margin-top: 1.5rem;
+  font-size: 3rem;
+}
+.section__title {
+  color: #212245;
+  font-size: 2rem;
+}
+.section__title span {
+  color: #df2020;
+}
+.section__subtitle {
+  font-size: 1.2rem;
+  font-weight: 500;
+  color: #df2020;
+}
+
+@media screen and (max-width: 768px) {
+  section {
+    padding: 60px 0px 0px;
+  }
+  .section__title {
+    font-size: 1.8rem;
+  }
+  .text__font {
+    font-size: 0.92rem;
+  }
+
+  .logo img {
+    width: 30%;
+  }
+  .logo h1,
+  .logo h2 {
+    font-size: 0.8rem;
+  }
 }

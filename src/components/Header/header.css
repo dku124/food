@@ -115,3 +115,11 @@
     display: block;
   }
 }
+@media screen and (max-width: 768px) {
+  .header__wrapper {
+    height: 70px;
+  }
+  .sticky__header {
+    height: 70px;
+  }
+}

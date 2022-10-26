@@ -20,8 +20,8 @@ const Category = () => {
     <Container>
       <Row>
         {categoryData.map((item, index) => (
-          <Col lg="3" md="3" key={index}>
-            <div className="category__item">
+          <Col xl="3" sm="6" key={index}>
+            <div className="category__item mt-3">
               <div className="category__img">
                 <img src={item.imgUrl} alt={item.display} />
               </div>

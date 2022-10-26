@@ -12,10 +12,19 @@
   transform: translateY(-10px);
 }
 .category__item h3 {
-  font-size: 1.1rem;
+  font-size: 0.9rem;
   margin-bottom: 0;
+  color: #271616;
 }
 .product__price {
   font-weight: 600;
   color: #df2020;
+}
+@media screen and (max-width: 768px) {
+  .category__img {
+    width: 40px;
+  }
+  .category__img img {
+    width: 100%;
+  }
 }

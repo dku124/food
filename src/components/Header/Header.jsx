@@ -36,7 +36,7 @@ const Header = () => {
     <header className="header" ref={headerRef}>
       <Container>
         <div className="header__wrapper">
-          <Link to="\home" className="logo">
+          <Link to="home" className="logo">
             <img src={logo} alt="food ordering" />
             <h1>D-Tasty treat</h1>
           </Link>

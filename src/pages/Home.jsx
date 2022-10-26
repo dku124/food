@@ -25,6 +25,7 @@ import location from '../assets/images/location.png';
 //  Testimonial
 import network from '../assets/images/network.png';
 import Testimonial from '../components/UI/Slider/Testimonial';
+import HotPizzaSlide from '../components/UI/Slider/HotPizzaSlide';
 
 const featureData = [
   { title: 'Quick Delivery', desc: 'Lorem ipsum dolor, sit amet consectetur adipisicing elit. Minus, doloremque.', imgUrl: feature01 },
@@ -71,11 +72,13 @@ const Home = () => {
             <Col lg="6" md="6">
               <div className="hero__content">
                 <h3 className="mb-3">Easy way to make an order</h3>
-                <h2 className="hero__title">
+                <h2 className="section__title">
                   <span className="txt__color">HUNGRY?</span> Just wait <br />
                   food at <span className="txt__color">your door</span>
                 </h2>
-                <p className="hero__txt">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Qui magni delectus tenetur autem, sint veritatis!</p>
+                <p className="hero__txt text__font">
+                  Lorem ipsum dolor sit amet, consectetur adipisicing elit. Qui magni delectus tenetur autem, sint veritatis!
+                </p>
                 <div className="hero__btns">
                   <Link to="/foods" className="btn order__btn">
                     Order now
@@ -120,20 +123,20 @@ const Home = () => {
         <Container>
           <Row>
             <Col lg="12" className="text-center">
-              <h5 className="featute__subtitle">What we serve</h5>
-              <h2 className="feature__title">
+              <h5 className="section__subtitle">What we serve</h5>
+              <h2 className="section__title">
                 Just sit back at home <br />
                 we will <span>take care</span>
               </h2>
-              <p className="feature__text mt-4 mb-1">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Earum nihil</p>
-              <p className="feature__text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Earum nihil</p>
+              <p className="feature__text mt-4 mb-1 text__font">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Earum nihil</p>
+              <p className="feature__text text__font">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Earum nihil</p>
             </Col>
             {featureData.map((item, index) => (
               <Col lg="4" md="14" className="mt-5" key={index}>
                 <div className="feature__item text-center px-5">
                   <img src={item.imgUrl} alt={item.title} className="w-25 mb-3" />
                   <h5 className="fw-bold">{item.title}</h5>
-                  <p>{item.desc}</p>
+                  <p className="text__font">{item.desc}</p>
                 </div>
               </Col>
             ))}
@@ -145,7 +148,7 @@ const Home = () => {
         <Container>
           <Row>
             <Col lg="12" className="text-center">
-              <h2>Popular Foods</h2>
+              <h2 className="section__title">Popular Foods</h2>
             </Col>
             <Col lg="12" className="mb-3">
               <div className="food__category text-center mt-4">
@@ -167,7 +170,7 @@ const Home = () => {
               </div>
             </Col>
             {allProduct.map((item, index) => (
-              <Col lg="3" md="6" key={index} className="mt-4">
+              <Col lg="4" md="4" xl="3" sm="6" key={index} className="mt-4">
                 <ProductCart item={item} />
               </Col>
             ))}
@@ -185,25 +188,27 @@ const Home = () => {
               <h2 className="section__title">
                 Why <span>tasty treat</span>
               </h2>
-              <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Repellendus totam excepturi consectetur ad sunt officiis veritatis ratione</p>
+              <p className="text__font">
+                Lorem ipsum dolor, sit amet consectetur adipisicing elit. Repellendus totam excepturi consectetur ad sunt officiis veritatis ratione
+              </p>
               <ListGroup className="mt-4">
                 <ListGroupItem>
-                  <p className="choose__us-title">
+                  <p className="choose__us-title text__font">
                     <i class="ri-checkbox-circle-line"></i>Fresh and tasty foods
                   </p>
                   <p className="choose__us-desc">Lorem ipsum, dolor sit amet consectetur adipisicing elit.</p>
                 </ListGroupItem>
                 <ListGroupItem>
-                  <p className="choose__us-title">
+                  <p className="choose__us-title text__font">
                     <i class="ri-checkbox-circle-line"></i>Quality support
                   </p>
                   <p className="choose__us-desc">Lorem ipsum, dolor sit amet consectetur adipisicing elit.</p>
                 </ListGroupItem>
                 <ListGroupItem>
-                  <p className="choose__us-title">
+                  <p className="choose__us-title text__font">
                     <i class="ri-checkbox-circle-line"></i>Order from any location
                   </p>
-                  <p className="choose__us-desc">Lorem ipsum, dolor sit amet consectetur adipisicing elit.</p>
+                  <p className="choose__us-desc text__font">Lorem ipsum, dolor sit amet consectetur adipisicing elit.</p>
                 </ListGroupItem>
               </ListGroup>
             </Col>
@@ -211,17 +216,20 @@ const Home = () => {
         </Container>
       </section>
 
-      <section className="pt-0">
+      <section>
         <Container>
           <Row>
             <Col lg="12">
-              <h2 className="text-center">Hot Pizza</h2>
+              <h2 className="section__title text-center">Hot Pizza</h2>
             </Col>
-            {hotPizza.map((item, index) => (
+            {/* {hotPizza.map((item, index) => (
               <Col lg="3" md="6" key={index} className="mt-4">
                 <ProductCart item={item} />
               </Col>
-            ))}
+            ))} */}
+            <div className="mt-5">
+              <HotPizzaSlide />
+            </div>
           </Row>
         </Container>
       </section>
@@ -234,11 +242,11 @@ const Home = () => {
               <h2 className="section__title mt-4">
                 What our <span>custormers</span> are saying
               </h2>
-              <p className="mt-4">
+              <p className="mt-4 text__font">
                 Lorem ipsum dolor, sit amet consectetur adipisicing elit. Repellendus totam excepturi consectetur ad sunt officiis veritatis ratione
               </p>
 
-              <div className="mt-5">
+              <div className="testi mt-5 mb-4">
                 <Testimonial />
               </div>
             </Col>

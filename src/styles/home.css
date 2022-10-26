@@ -1,6 +1,7 @@
 .hero__content {
   padding-top: 70px;
 }
+
 .hero__content h3 {
   font-size: 1.25rem;
   color: var(--bs-body-color);
@@ -53,10 +54,7 @@
   text-align: center;
   line-height: 29px;
 }
-.hero__title {
-  margin-top: 1.5rem;
-  font-size: 3rem;
-}
+
 .hero__txt {
   margin-top: 2rem;
   color: #686877;
@@ -68,6 +66,9 @@
 .btn.all-foods__btn:hover {
   background-color: #df2020;
   color: #fff;
+}
+.spotlight__section .row {
+  align-items: center;
 }
 
 /* feature */
@@ -104,11 +105,12 @@
   background-color: transparent;
   border: 0;
   color: #fff;
-  margin: 0 10px;
+  margin: 5px 10px;
   line-height: 26px;
   border-radius: 10px;
   font-weight: 600;
   transition: 0.2s;
+  border: 1px solid #ccc;
 }
 
 .food__category button img {
@@ -125,18 +127,7 @@
 }
 
 /* why tasty treat */
-.section__title {
-  color: #212245;
-  font-size: 2rem;
-}
-.section__title span {
-  color: #df2020;
-}
-.section__subtitle {
-  font-size: 1.2rem;
-  font-weight: 500;
-  color: #df2020;
-}
+
 .list-group-item {
   margin-top: 1rem;
   border: 0 !important;
@@ -157,4 +148,28 @@
 }
 .choose__us-desc {
   margin-top: 10px;
+}
+@media screen and (max-width: 768px) {
+  .hero__content {
+    padding-top: 0px;
+    margin-top: -20px;
+  }
+  .header__wrapper {
+    height: 70px;
+  }
+  .sticky__header {
+    height: 70px;
+  }
+  .hero__content h3 {
+    font-size: 1rem;
+  }
+  .hero__btns {
+    column-gap: 1.8rem;
+  }
+  .hero__service {
+    column-gap: 1.8rem;
+  }
+  .hero__service p {
+    font-size: 0.8rem;
+  }
 }

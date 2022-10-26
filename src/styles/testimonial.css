@@ -13,3 +13,7 @@
   align-items: center;
   column-gap: 1.5rem;
 }
+.testi .slick-prev,
+.testi .slick-next {
+  display: none !important;
+}
