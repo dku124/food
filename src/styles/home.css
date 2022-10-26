@@ -123,3 +123,33 @@
   background-color: #fff;
   color: #df2020;
 }
+
+/* why tasty treat */
+.tasty__title {
+  color: #212245;
+  font-size: 3rem;
+}
+.tasty__title span {
+  color: #df2020;
+}
+.list-group-item {
+  margin-top: 1rem;
+  border: 0;
+  background-color: transparent;
+}
+.list-group-item p {
+  margin-bottom: 0;
+}
+.choose__us-title {
+  display: flex;
+  align-items: center;
+  column-gap: 10px;
+  color: #000;
+  font-weight: 700;
+}
+.choose__us-title i {
+  color: #df2020;
+}
+.choose__us-desc {
+  margin-top: 10px;
+}

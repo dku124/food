@@ -1,5 +1,5 @@
 import React from 'react';
-import { Container, Row, Col } from 'reactstrap';
+import { Container, Row, Col, ListGroup, ListGroupItem } from 'reactstrap';
 import Helmet from '../components/Helmet/Helmet';
 import heroImg from '../assets/images/hero.png';
 import '../styles/home.css';
@@ -18,6 +18,9 @@ import bread from '../assets/images/bread.png';
 import ProductCart from '../components/UI/ProductCart/ProductCart';
 import { useState } from 'react';
 import { useEffect } from 'react';
+
+// why tasty treat
+import location from '../assets/images/location.png';
 
 const featureData = [
   { title: 'Quick Delivery', desc: 'Lorem ipsum dolor, sit amet consectetur adipisicing elit. Minus, doloremque.', imgUrl: feature01 },
@@ -47,6 +50,8 @@ const Home = () => {
       setAllProducts(filterProducts);
     }
   }, [category]);
+
+  //hot pizza
 
   return (
     <Helmet title={'home'}>
@@ -106,10 +111,10 @@ const Home = () => {
           <Row>
             <Col lg="12" className="text-center">
               <h5 className="featute__subtitle">What we serve</h5>
-              <h3 className="feature__title">
+              <h2 className="feature__title">
                 Just sit back at home <br />
                 we will <span>take care</span>
-              </h3>
+              </h2>
               <p className="feature__text mt-4 mb-1">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Earum nihil</p>
               <p className="feature__text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Earum nihil</p>
             </Col>
@@ -130,7 +135,7 @@ const Home = () => {
         <Container>
           <Row>
             <Col lg="12" className="text-center">
-              <h3>Popular Foods</h3>
+              <h2>Popular Foods</h2>
             </Col>
             <Col lg="12" className="mb-3">
               <div className="food__category text-center mt-4">
@@ -156,6 +161,52 @@ const Home = () => {
                 <ProductCart item={item} />
               </Col>
             ))}
+          </Row>
+        </Container>
+      </section>
+
+      <section>
+        <Container>
+          <Row>
+            <Col lg="6" md="6">
+              <img src={location} alt="" className="w-100" />
+            </Col>
+            <Col lg="6" md="6">
+              <h2 className="tasty__title">
+                Why <span>tasty treat</span>
+              </h2>
+              <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Repellendus totam excepturi consectetur ad sunt officiis veritatis ratione</p>
+              <ListGroup className="mt-4">
+                <ListGroupItem>
+                  <p className="choose__us-title">
+                    <i class="ri-checkbox-circle-line"></i>Fresh and tasty foods
+                  </p>
+                  <p className="choose__us-desc">Lorem ipsum, dolor sit amet consectetur adipisicing elit.</p>
+                </ListGroupItem>
+                <ListGroupItem>
+                  <p className="choose__us-title">
+                    <i class="ri-checkbox-circle-line"></i>Quality support
+                  </p>
+                  <p className="choose__us-desc">Lorem ipsum, dolor sit amet consectetur adipisicing elit.</p>
+                </ListGroupItem>
+                <ListGroupItem>
+                  <p className="choose__us-title">
+                    <i class="ri-checkbox-circle-line"></i>Order from any location
+                  </p>
+                  <p className="choose__us-desc">Lorem ipsum, dolor sit amet consectetur adipisicing elit.</p>
+                </ListGroupItem>
+              </ListGroup>
+            </Col>
+          </Row>
+        </Container>
+      </section>
+
+      <section>
+        <Container>
+          <Row>
+            <Col lg="12">
+              <h2>Hot Pizza</h2>
+            </Col>
           </Row>
         </Container>
       </section>
