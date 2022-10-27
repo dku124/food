@@ -170,7 +170,7 @@ const Home = () => {
               </div>
             </Col>
             {allProduct.map((item, index) => (
-              <Col lg="4" md="4" xl="3" sm="6" key={index} className="mt-4">
+              <Col md="4" xl="3" sm="6" key={index} className="mt-4">
                 <ProductCart item={item} />
               </Col>
             ))}

@@ -16,13 +16,13 @@ const HotPizzaSlide = () => {
 
   var settings = {
     dots: true,
-    infinite: false,
+    infinite: true,
     speed: 500,
     slidesToShow: 4,
-    slidesToScroll: 4,
+    slidesToScroll: 1,
     touchMove: true,
     useCSS: true,
-    // variableWidth: true,
+    autoplay: true,
     responsive: [
       {
         breakpoint: 1400,
