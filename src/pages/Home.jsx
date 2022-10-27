@@ -57,12 +57,12 @@ const Home = () => {
   }, [category]);
 
   //section hot pizza
-  const [hotPizza, setHotPizza] = useState(products);
-  useEffect(() => {
-    const filterHotPizza = products.filter((item) => item.category === 'Pizza');
-    const sliceHotPizza = filterHotPizza.slice(0, 4);
-    setHotPizza(sliceHotPizza);
-  }, []);
+  // const [hotPizza, setHotPizza] = useState(products);
+  // useEffect(() => {
+  //   const filterHotPizza = products.filter((item) => item.category === 'Pizza');
+  //   const sliceHotPizza = filterHotPizza.slice(0, 4);
+  //   setHotPizza(sliceHotPizza);
+  // }, []);
 
   return (
     <Helmet title={'home'}>
@@ -222,11 +222,6 @@ const Home = () => {
             <Col lg="12">
               <h2 className="section__title text-center">Hot Pizza</h2>
             </Col>
-            {/* {hotPizza.map((item, index) => (
-              <Col lg="3" md="6" key={index} className="mt-4">
-                <ProductCart item={item} />
-              </Col>
-            ))} */}
             <div className="mt-5">
               <HotPizzaSlide />
             </div>

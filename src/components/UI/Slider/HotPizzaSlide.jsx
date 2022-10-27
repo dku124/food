@@ -5,7 +5,6 @@ import products from '../../../assets/fake-data/products';
 import ProductCart from '../ProductCart/ProductCart';
 
 import '../../../styles/hotPizzaSlide.css';
-import { Col } from 'reactstrap';
 
 const HotPizzaSlide = () => {
   const [hotPizza, setHotPizza] = useState(products);
