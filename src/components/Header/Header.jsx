@@ -1,5 +1,6 @@
 import React from 'react';
 import { useRef, useEffect } from 'react';
+import { useSelector } from 'react-redux';
 import { Link, NavLink } from 'react-router-dom';
 import { Container } from 'reactstrap';
 import logo from '../../assets/images/res-logo.png';
@@ -32,6 +33,10 @@ const Header = () => {
     stickyHeader();
     return () => window.removeEventListener('scroll', stickyHeader);
   });
+
+  // start using redux-toolkit
+  const totalQuantity = useSelector((state) => state.cart.totalQuantity);
+
   return (
     <header className="header" ref={headerRef}>
       <Container>
@@ -50,6 +55,7 @@ const Header = () => {
               ))}
             </div>
           </div>
+
           <div className="nav__icons">
             <div className="icon fav__icon">
               <i class="ri-heart-line"></i>
@@ -57,7 +63,7 @@ const Header = () => {
             </div>
             <div className="icon cart__icon">
               <i class="ri-shopping-cart-line"></i>
-              <span className="badge">2</span>
+              <span className="badge">{totalQuantity}</span>
             </div>
             <div className="user__icon">
               <Link to="/login">
