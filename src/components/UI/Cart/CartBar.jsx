@@ -3,12 +3,19 @@ import { Link } from 'react-router-dom';
 import { ListGroup } from 'reactstrap';
 import CartItemInfo from './CartItemInfo';
 import '../../../styles/cartBar.css';
+import { useDispatch } from 'react-redux';
+import { cartVisibleAction } from '../../../store/CartSlide/cartVisible';
 
 const CartBar = () => {
+  const dispatch = useDispatch();
+  const hideCartBar = () => {
+    dispatch(cartVisibleAction.toggle());
+  };
+
   return (
     <div className="cart__container">
       <div className="cart__bar">
-        <button className="cart__close">
+        <button className="cart__close" onClick={hideCartBar}>
           <i class="ri-close-fill"></i>
         </button>
         <ListGroup className="cart__list">

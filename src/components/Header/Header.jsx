@@ -1,9 +1,11 @@
 import React from 'react';
 import { useRef, useEffect } from 'react';
+import { useDispatch } from 'react-redux';
 import { useSelector } from 'react-redux';
 import { Link, NavLink } from 'react-router-dom';
 import { Container } from 'reactstrap';
 import logo from '../../assets/images/res-logo.png';
+import { cartVisibleAction } from '../../store/CartSlide/cartVisible';
 
 import './header.css';
 
@@ -37,6 +39,12 @@ const Header = () => {
   // start using redux-toolkit
   const totalQuantity = useSelector((state) => state.cart.totalQuantity);
 
+  //on off cartBar
+  const dispatch = useDispatch();
+  const toggleCartBar = () => {
+    dispatch(cartVisibleAction.toggle());
+  };
+
   return (
     <header className="header" ref={headerRef}>
       <Container>
@@ -61,7 +69,7 @@ const Header = () => {
               <i class="ri-heart-line"></i>
               <span className="badge">2</span>
             </div>
-            <div className="icon cart__icon">
+            <div className="icon cart__icon" onClick={toggleCartBar}>
               <i class="ri-shopping-cart-line"></i>
               <span className="badge">{totalQuantity}</span>
             </div>
