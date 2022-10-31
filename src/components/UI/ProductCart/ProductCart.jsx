@@ -1,6 +1,7 @@
 import React from 'react';
 import { useDispatch } from 'react-redux';
 import { Link } from 'react-router-dom';
+import { ButtonGroup } from 'reactstrap';
 import { cartActions } from '../../../store/CartSlide/cartSlide';
 
 import '../../../styles/productCart.css';
@@ -33,9 +34,17 @@ const ProductCart = (props) => {
         </h5>
         <div className="d-flex align-items-center justify-content-between mt-4">
           <span className="product__price">${price}</span>
-          <button className="btn order__btn addToCart__btn" onClick={addToCart}>
-            Add to card
-          </button>
+          <ButtonGroup>
+            <button className="btn order__btn addToCart__btn">
+              <i class="ri-search-2-line"></i>
+            </button>
+            <button className="btn order__btn addToCart__btn">
+              <i class="ri-heart-line"></i>
+            </button>
+            <button className="btn order__btn addToCart__btn" onClick={addToCart}>
+              <i class="ri-shopping-bag-line"></i>
+            </button>
+          </ButtonGroup>
         </div>
       </div>
     </div>

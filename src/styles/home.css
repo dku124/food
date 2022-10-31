@@ -18,9 +18,11 @@
   font-size: 1rem;
 }
 .btn.order__btn {
-  color: #fff;
-  background-color: #df2020;
+  color: #777;
+  background-color: #fff;
   display: flex;
+  border: 1px solid #ccc;
+  padding: 0.37rem 0.6rem;
 }
 .order__btn span {
   height: 16px;
