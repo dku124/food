@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import { ListGroup } from 'reactstrap';
 import CartItemInfo from './CartItemInfo';
 import '../../../styles/cartBar.css';
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { cartVisibleAction } from '../../../store/CartSlide/cartVisible';
 
 const CartBar = () => {
@@ -12,6 +12,9 @@ const CartBar = () => {
     dispatch(cartVisibleAction.toggle());
   };
 
+  //work with cart bar
+  const cartProduct = useSelector((state) => state.cart.cartItem);
+
   return (
     <div className="cart__container">
       <div className="cart__bar">
@@ -19,7 +22,11 @@ const CartBar = () => {
           <i class="ri-close-fill"></i>
         </button>
         <ListGroup className="cart__list">
-          <CartItemInfo />
+          {cartProduct.length === 0 ? (
+            <h6 className="d-flex justify-content-center">No Item</h6>
+          ) : (
+            cartProduct.map((item, index) => <CartItemInfo item={item} key={index} />)
+          )}
         </ListGroup>
         <div className="cart__bottom">
           <h6>

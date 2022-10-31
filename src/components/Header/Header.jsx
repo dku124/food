@@ -38,6 +38,7 @@ const Header = () => {
 
   // start using redux-toolkit
   const totalQuantity = useSelector((state) => state.cart.totalQuantity);
+  // console.log(totalQuantity);
 
   //on off cartBar
   const dispatch = useDispatch();
