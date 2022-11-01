@@ -1,3 +1,6 @@
+.quickview.hide {
+  display: none;
+}
 .quickview__overlay {
   position: fixed;
   top: 0;
@@ -21,15 +24,19 @@
 }
 .quickview__img {
   width: 60%;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 .quickview__img img {
-  width: 100%;
-  height: 100%;
+  width: 60%;
+  height: 60%;
   object-fit: contain;
 }
 .quickview__info {
   width: 40%;
-  background-color: #fcfcfc;
+  background-color: #f4f4ff;
   padding: 30px;
 }
 .quickview__review {
