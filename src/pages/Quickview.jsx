@@ -1,33 +1,45 @@
 import React, { useState } from 'react';
 import '../styles/quickview.css';
-import img1 from '../assets/images/product_01.1.jpg';
 import '../styles/quickview.css';
 
 import products from '../assets/fake-data/products';
 import { useRef } from 'react';
 import { useDispatch } from 'react-redux';
 import { viewAction } from '../store/QuickviewProduct/QuickviewProduct';
+import { useSelector } from 'react-redux';
 
 const Quickview = ({ id }) => {
   const product = products.find((item) => item.id === id);
-  console.log();
 
   const hideView = useRef(null);
   const hideViewProduct = () => {
     hideView.current.style.display = 'none';
   };
 
-  //   const dispatch = useDispatch();
-  //   const hideViewProduct = () => {
-  //     dispatch(viewAction.toggle());
-  //   };
+  // c2
+  // const viewPr = useSelector((state) => state.view.viewProduct);
+  // const dispatch = useDispatch();
+  // const hideViewProduct = () => {
+  //   dispatch(viewAction.toggle());
+  //   console.log(viewPr);
+  // };
+
+  // select image display
+  const [selectedImage, setSelectedImage] = useState();
 
   return (
     <div className="quickview" ref={hideView}>
       <div className="quickview__overlay"></div>
       <div className="quickview__container">
-        <div className="quickview__img">
-          <img src={product.image01} alt="" />
+        <div className="quickview__group">
+          <div className="quickview__img">
+            <img src={selectedImage || product.image01} alt="" />
+          </div>
+          <div className="quickview__img-group">
+            <img src={product.image01} alt="" onClick={() => setSelectedImage(product.image01)} />
+            <img src={product.image02} alt="" onClick={() => setSelectedImage(product.image02)} />
+            <img src={product.image03} alt="" onClick={() => setSelectedImage(product.image03)} />
+          </div>
         </div>
         <div className="quickview__info">
           <div className="quickview__review">

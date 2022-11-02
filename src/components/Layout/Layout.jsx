@@ -12,7 +12,6 @@ const Layout = () => {
   return (
     <>
       <Header />
-      {/* <Quickview /> */}
       {showCartBar && <CartBar />}
       <div>
         <Routers />

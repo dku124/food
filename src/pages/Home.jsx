@@ -16,7 +16,7 @@ import humburger from '../assets/images/hamburger.png';
 import pizza from '../assets/images/pizza.png';
 import bread from '../assets/images/bread.png';
 import ProductCart from '../components/UI/ProductCart/ProductCart';
-import { useState } from 'react';
+import { useState, useSelector } from 'react';
 import { useEffect } from 'react';
 
 // why tasty treat
@@ -26,6 +26,7 @@ import location from '../assets/images/location.png';
 import network from '../assets/images/network.png';
 import Testimonial from '../components/UI/Slider/Testimonial';
 import HotPizzaSlide from '../components/UI/Slider/HotPizzaSlide';
+import Quickview from './Quickview';
 
 const featureData = [
   { title: 'Quick Delivery', desc: 'Lorem ipsum dolor, sit amet consectetur adipisicing elit. Minus, doloremque.', imgUrl: feature01 },

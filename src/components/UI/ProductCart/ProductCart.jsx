@@ -25,10 +25,18 @@ const ProductCart = (props) => {
     );
   };
 
-  const aaa = useSelector((state) => state.view.viewProduct);
   // view product popup
-  const [view, setView] = useState(aaa);
-  console.log(view);
+  const [view, setView] = useState(false);
+  const toggleView = () => {
+    setView(!view);
+  };
+
+  // // view product popup c2
+  // const view = useSelector((state) => state.view.viewProduct);
+  // console.log(view);
+  // const toggleView = () => {
+  //   dispatch(viewAction.toggle());
+  // };
 
   return (
     <>
@@ -45,7 +53,7 @@ const ProductCart = (props) => {
           <div className="d-flex align-items-center justify-content-between mt-4">
             <span className="product__price">${price}</span>
             <ButtonGroup>
-              <button className="btn order__btn addToCart__btn" onClick={() => setView(!aaa)}>
+              <button className="btn order__btn addToCart__btn" onClick={toggleView}>
                 <i class="ri-search-2-line"></i>
               </button>
               <button className="btn order__btn addToCart__btn">
