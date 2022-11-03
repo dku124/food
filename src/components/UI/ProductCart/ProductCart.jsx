@@ -1,18 +1,16 @@
 import React from 'react';
-import { useState } from 'react';
-import { useSelector } from 'react-redux';
+import { useRef } from 'react';
 import { useDispatch } from 'react-redux';
 import { Link } from 'react-router-dom';
 import { ButtonGroup } from 'reactstrap';
-import Quickview from '../../../pages/Quickview';
 import { cartActions } from '../../../store/CartSlide/cartSlide';
 import { showActions } from '../../../store/QuickviewItemSlice/QuickviewItemSlice';
 import { viewAction } from '../../../store/QuickviewProduct/QuickviewProduct';
 
 import '../../../styles/productCart.css';
 
-const ProductCart = (props) => {
-  const { id, title, image01, image02, image03, price } = props.item;
+const ProductCart = ({ item }) => {
+  const { id, title, image01, price } = item;
 
   const dispatch = useDispatch();
   const addToCart = () => {
@@ -26,19 +24,7 @@ const ProductCart = (props) => {
     );
   };
 
-  // view product popup
-  const [view, setView] = useState(false);
-  const toggleView = () => {
-    setView(!view);
-  };
-
-  // // view product popup c2
-  // const view = useSelector((state) => state.view.viewProduct);
-  // console.log(view);
-  // const toggleView = () => {
-  //   dispatch(viewAction.toggle());
-  // };
-
+  //show popup item quickview
   const showItem = () => {
     dispatch(
       showActions.showItem({
@@ -50,6 +36,12 @@ const ProductCart = (props) => {
       viewAction.toggle(),
     );
     console.log(dispatch(viewAction.toggle()));
+  };
+
+  //add to wishlist
+  const wishListBtn = useRef(null);
+  const addToWishlist = () => {
+    wishListBtn.current.classList.toggle('favorite');
   };
 
   return (
@@ -67,10 +59,10 @@ const ProductCart = (props) => {
           <div className="d-flex align-items-center justify-content-between mt-4">
             <span className="product__price">${price}</span>
             <ButtonGroup>
-              <button className="btn order__btn addToCart__btn" onClick={showItem}>
+              <button className="btn order__btn addToCart__btn " onClick={showItem}>
                 <i class="ri-search-2-line"></i>
               </button>
-              <button className="btn order__btn addToCart__btn">
+              <button className="btn order__btn addToCart__btn wish__btn" ref={wishListBtn} onClick={addToWishlist}>
                 <i class="ri-heart-line"></i>
               </button>
               <button className="btn order__btn addToCart__btn" onClick={addToCart}>
@@ -80,7 +72,6 @@ const ProductCart = (props) => {
           </div>
         </div>
       </div>
-      {/* {view && <Quickview id={id} />} */}
     </>
   );
 };

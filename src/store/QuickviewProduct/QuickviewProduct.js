@@ -6,7 +6,6 @@ const quickviewProduct = createSlice({
   reducers: {
     toggle(state) {
       state.viewProduct = !state.viewProduct;
-      // console.log(state.viewProduct);
     },
   },
 });

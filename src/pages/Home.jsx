@@ -16,7 +16,7 @@ import humburger from '../assets/images/hamburger.png';
 import pizza from '../assets/images/pizza.png';
 import bread from '../assets/images/bread.png';
 import ProductCart from '../components/UI/ProductCart/ProductCart';
-import { useState, useSelector } from 'react';
+import { useState } from 'react';
 import { useEffect } from 'react';
 
 // why tasty treat

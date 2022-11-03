@@ -1,6 +1,3 @@
-.quickview.hide {
-  display: none;
-}
 .quickview__overlay {
   position: fixed;
   top: 0;
@@ -17,6 +14,7 @@
   left: 50%;
   transform: translate(-50%, -50%);
   width: 900px;
+  max-width: 90vw;
   height: 460px;
   z-index: 30;
   background-color: #fff;
@@ -71,15 +69,15 @@
 }
 .badge__caption {
   color: #868686;
-  font-size: 14px;
+  font-size: 1rem;
 }
 .quickview__title {
-  font-size: 30px;
+  font-size: 2rem;
   margin: 10px 0 18px;
   line-height: 35px;
 }
 .quickview__price {
-  font-size: 22px;
+  font-size: 1.2rem;
   color: #cb8161;
   display: block;
   padding-bottom: 30px;
@@ -91,7 +89,7 @@
 }
 .quickview__button span {
   color: #868686;
-  font-size: 14px;
+  font-size: 1rem;
   width: 20px;
   text-align: center;
 }
@@ -110,7 +108,41 @@
   right: 0;
   padding: 10px;
   color: #6d6969;
-  font-size: 30px;
+  font-size: 2rem;
   line-height: 1;
   cursor: pointer;
+}
+
+.wish__btn.favorite .ri-heart-line:before {
+  content: '\ee0e';
+  color: #df2020;
+}
+
+@media screen and (max-width: 768px) {
+  .quickview__container {
+    height: auto;
+    flex-direction: column;
+    align-items: center;
+  }
+  .quickview__info {
+    width: 100%;
+    text-align: center;
+    padding: 15px;
+  }
+  .quickview__badge {
+    justify-content: center;
+  }
+  .quickview__group {
+    width: 100%;
+    padding: 15px 0px;
+  }
+}
+@media screen and (max-width: 576px) {
+  .quickview__img-group img {
+    width: 70px;
+    height: 70px;
+  }
+  .quickview__review {
+    margin-top: 0;
+  }
 }

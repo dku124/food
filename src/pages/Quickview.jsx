@@ -3,30 +3,37 @@ import '../styles/quickview.css';
 import '../styles/quickview.css';
 
 import products from '../assets/fake-data/products';
-import { useRef } from 'react';
 import { useDispatch } from 'react-redux';
 import { viewAction } from '../store/QuickviewProduct/QuickviewProduct';
 import { useSelector } from 'react-redux';
+import { cartActions } from '../store/CartSlide/cartSlide';
 
 const Quickview = () => {
+  const dispatch = useDispatch();
+
   // select image display
   const [selectedImage, setSelectedImage] = useState();
 
   const itemView = useSelector((state) => state.item.item);
-
   const item = products.find((item) => item.id === itemView.id);
 
-  //hide popup
-  const dispatch = useDispatch();
-
-  const hideView = useRef(null);
+  //hide popup item quickview
   const hideViewProduct = () => {
     dispatch(viewAction.toggle());
   };
-
+  const addToCart = () => {
+    dispatch(
+      cartActions.addItem({
+        id: item.id,
+        title: item.title,
+        price: item.price,
+        image01: item.image01,
+      }),
+    );
+  };
   return (
-    <div className="quickview" ref={hideView}>
-      <div className="quickview__overlay"></div>
+    <div className="quickview">
+      <div className="quickview__overlay" onClick={hideViewProduct}></div>
       <div className="quickview__container">
         <div className="quickview__group">
           <div className="quickview__img">
@@ -58,7 +65,7 @@ const Quickview = () => {
               <button className="btn order__btn addToCart__btn">
                 <i class="ri-heart-line"></i>
               </button>
-              <button className="btn order__btn addToCart__btn">
+              <button className="btn order__btn addToCart__btn" onClick={addToCart}>
                 <i class="ri-shopping-bag-line"></i>
               </button>
             </div>
