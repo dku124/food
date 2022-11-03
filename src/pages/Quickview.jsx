@@ -8,24 +8,21 @@ import { useDispatch } from 'react-redux';
 import { viewAction } from '../store/QuickviewProduct/QuickviewProduct';
 import { useSelector } from 'react-redux';
 
-const Quickview = ({ id }) => {
-  const product = products.find((item) => item.id === id);
+const Quickview = () => {
+  // select image display
+  const [selectedImage, setSelectedImage] = useState();
+
+  const itemView = useSelector((state) => state.item.item);
+
+  const item = products.find((item) => item.id === itemView.id);
+
+  //hide popup
+  const dispatch = useDispatch();
 
   const hideView = useRef(null);
   const hideViewProduct = () => {
-    hideView.current.style.display = 'none';
+    dispatch(viewAction.toggle());
   };
-
-  // c2
-  // const viewPr = useSelector((state) => state.view.viewProduct);
-  // const dispatch = useDispatch();
-  // const hideViewProduct = () => {
-  //   dispatch(viewAction.toggle());
-  //   console.log(viewPr);
-  // };
-
-  // select image display
-  const [selectedImage, setSelectedImage] = useState();
 
   return (
     <div className="quickview" ref={hideView}>
@@ -33,12 +30,12 @@ const Quickview = ({ id }) => {
       <div className="quickview__container">
         <div className="quickview__group">
           <div className="quickview__img">
-            <img src={selectedImage || product.image01} alt="" />
+            <img src={selectedImage || item.image01} alt="" />
           </div>
           <div className="quickview__img-group">
-            <img src={product.image01} alt="" onClick={() => setSelectedImage(product.image01)} />
-            <img src={product.image02} alt="" onClick={() => setSelectedImage(product.image02)} />
-            <img src={product.image03} alt="" onClick={() => setSelectedImage(product.image03)} />
+            <img src={item.image01} alt="" onClick={() => setSelectedImage(item.image01)} />
+            <img src={item.image02} alt="" onClick={() => setSelectedImage(item.image02)} />
+            <img src={item.image03} alt="" onClick={() => setSelectedImage(item.image03)} />
           </div>
         </div>
         <div className="quickview__info">
@@ -54,8 +51,8 @@ const Quickview = ({ id }) => {
               <span className="badge__caption">1 review</span>
             </span>
           </div>
-          <h5 className="quickview__title">{product.title}</h5>
-          <span className="quickview__price">${product.price}</span>
+          <h5 className="quickview__title">{item.title}</h5>
+          <span className="quickview__price">${item.price}</span>
           <div className="quickview__button">
             <div className="quickview__button-group">
               <button className="btn order__btn addToCart__btn">

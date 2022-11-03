@@ -21,7 +21,7 @@ const HotPizzaSlide = () => {
     slidesToScroll: 1,
     touchMove: true,
     useCSS: true,
-    autoplay: true,
+    // autoplay: true,
     responsive: [
       {
         breakpoint: 1400,

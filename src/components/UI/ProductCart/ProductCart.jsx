@@ -6,12 +6,13 @@ import { Link } from 'react-router-dom';
 import { ButtonGroup } from 'reactstrap';
 import Quickview from '../../../pages/Quickview';
 import { cartActions } from '../../../store/CartSlide/cartSlide';
+import { showActions } from '../../../store/QuickviewItemSlice/QuickviewItemSlice';
 import { viewAction } from '../../../store/QuickviewProduct/QuickviewProduct';
 
 import '../../../styles/productCart.css';
 
 const ProductCart = (props) => {
-  const { id, title, image01, price } = props.item;
+  const { id, title, image01, image02, image03, price } = props.item;
 
   const dispatch = useDispatch();
   const addToCart = () => {
@@ -38,6 +39,19 @@ const ProductCart = (props) => {
   //   dispatch(viewAction.toggle());
   // };
 
+  const showItem = () => {
+    dispatch(
+      showActions.showItem({
+        id,
+        title,
+        price,
+        image01,
+      }),
+      viewAction.toggle(),
+    );
+    console.log(dispatch(viewAction.toggle()));
+  };
+
   return (
     <>
       <div className="product__item">
@@ -53,7 +67,7 @@ const ProductCart = (props) => {
           <div className="d-flex align-items-center justify-content-between mt-4">
             <span className="product__price">${price}</span>
             <ButtonGroup>
-              <button className="btn order__btn addToCart__btn" onClick={toggleView}>
+              <button className="btn order__btn addToCart__btn" onClick={showItem}>
                 <i class="ri-search-2-line"></i>
               </button>
               <button className="btn order__btn addToCart__btn">
@@ -66,7 +80,7 @@ const ProductCart = (props) => {
           </div>
         </div>
       </div>
-      {view && <Quickview id={id} />}
+      {/* {view && <Quickview id={id} />} */}
     </>
   );
 };

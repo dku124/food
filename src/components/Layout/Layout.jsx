@@ -9,10 +9,13 @@ import CartBar from '../UI/Cart/CartBar';
 const Layout = () => {
   const showCartBar = useSelector((state) => state.cartVisible.cartIsVisible);
 
+  const showItem = useSelector(state=> state.view.viewProduct)
+
   return (
     <>
       <Header />
       {showCartBar && <CartBar />}
+      {showItem && <Quickview />}
       <div>
         <Routers />
       </div>

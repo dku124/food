@@ -26,7 +26,6 @@ import location from '../assets/images/location.png';
 import network from '../assets/images/network.png';
 import Testimonial from '../components/UI/Slider/Testimonial';
 import HotPizzaSlide from '../components/UI/Slider/HotPizzaSlide';
-import Quickview from './Quickview';
 
 const featureData = [
   { title: 'Quick Delivery', desc: 'Lorem ipsum dolor, sit amet consectetur adipisicing elit. Minus, doloremque.', imgUrl: feature01 },
@@ -56,14 +55,6 @@ const Home = () => {
       setAllProducts(filterProducts);
     }
   }, [category]);
-
-  //section hot pizza
-  // const [hotPizza, setHotPizza] = useState(products);
-  // useEffect(() => {
-  //   const filterHotPizza = products.filter((item) => item.category === 'Pizza');
-  //   const sliceHotPizza = filterHotPizza.slice(0, 4);
-  //   setHotPizza(sliceHotPizza);
-  // }, []);
 
   return (
     <Helmet title={'home'}>

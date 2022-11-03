@@ -19,6 +19,8 @@ export const cartSlice = createSlice({
           id: newItem.id,
           title: newItem.title,
           image01: newItem.image01,
+          image02: newItem.image02,
+          image03: newItem.image03,
           price: newItem.price,
           quantity: 1,
           totalPrice: newItem.price,
