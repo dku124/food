@@ -1,6 +1,6 @@
 import React from 'react';
 import { Container } from 'reactstrap';
-import commonImg from '../../../assets/images/banner.jpg';
+import '../../../styles/commonSection.css';
 
 const Commonsection = (props) => {
   return (
