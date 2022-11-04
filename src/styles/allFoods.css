@@ -18,6 +18,7 @@
   color: #000;
 }
 .search__box {
+  padding: 5px;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -27,10 +28,9 @@
   margin-top: 15px;
 }
 .search__box input {
-  /* width: 100%; */
+  flex: 1;
   border: 0;
   outline: none;
-  padding: 5px 10px;
   border-radius: 5px;
 }
 .search__box input::placeholder {
@@ -38,7 +38,7 @@
 }
 .search__box span {
   line-height: 1;
-  padding: 8px 12px;
+  cursor: pointer;
 }
 
 .select {
