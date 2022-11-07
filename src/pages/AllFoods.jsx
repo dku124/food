@@ -26,7 +26,7 @@ const AllFoods = () => {
     }
   });
 
-  const productPerPage = 12;
+  const productPerPage = 9;
   const visitedPage = pageNumber * productPerPage;
   const displayPage = searchedProduct.slice(visitedPage, visitedPage + productPerPage);
   // console.log(displayPage);
@@ -67,14 +67,10 @@ const AllFoods = () => {
               <div className="food__sidebar">
                 <h4>Category</h4>
                 <ul className="category__list">
-                  {/* <li onClick={() => setCategory('All')}>All foods</li>
-                  <li onClick={() => setCategory('Burger')}>Burger</li>
-                  <li onClick={() => setCategory('Pizza')}>Pizza</li>
-                  <li onClick={() => setCategory('Bread')}>Bread</li> */}
-                  {/* <li onClick={() => setCategory('All')}>All foods</li>
+                  <li onClick={() => setCategory('All')}>All foods</li>
                   <li onClick={() => setCategory('Pizza')}>Pizza</li>
                   <li onClick={() => setCategory('Bread')}>Bread</li>
-                  <li onClick={() => setCategory('Burger')}>Burger</li> */}
+                  <li onClick={() => setCategory('Burger')}>Burger</li>
                 </ul>
 
                 <div className="select">
@@ -97,7 +93,7 @@ const AllFoods = () => {
             </Col>
             <Col lg="9">
               <Row>
-                {displayPage.map((item, index) => (
+                {allProduct.map((item, index) => (
                   <Col lg="4" key={index} className="mt-4">
                     <ProductCart item={item} />
                   </Col>

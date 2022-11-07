@@ -86,6 +86,25 @@ button {
   color: #df2020;
 }
 
+.paginationBttns li a {
+  padding: 8px 12px;
+  background-color: #df2020;
+  border-radius: 5px;
+  color: #fff;
+  font-size: 0.9rem;
+}
+.paginationBttns {
+  margin: 2rem;
+  display: flex;
+  justify-content: center;
+  column-gap: 0.5rem;
+}
+
+.paginationBttns li a:not([href]):not([class]),
+a:not([href]):not([class]):hover {
+  color: #fff;
+}
+
 @media screen and (max-width: 768px) {
   section {
     padding: 60px 0px 0px;
