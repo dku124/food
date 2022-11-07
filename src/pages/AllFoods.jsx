@@ -11,52 +11,59 @@ import { useEffect } from 'react';
 import ReactPaginate from 'react-paginate';
 
 const AllFoods = () => {
-  const [searchTerm, setSearchTerm] = useState('');
+  // const [searchTerm, setSearchTerm] = useState('');
 
-  const [pageNumber, setPageNumber] = useState(0);
+  // const [pageNumber, setPageNumber] = useState(0);
 
-  const searchedProduct = products.filter((item) => {
-    if (searchTerm.value === '') {
-      return item;
-    }
-    if (item.title.toLowerCase().includes(searchTerm.toLowerCase())) {
-      return item;
-    } else {
-      return;
-    }
-  });
+  // const searchedProduct = products.filter((item) => {
+  //   if (searchTerm.value === '') {
+  //     return item;
+  //   }
+  //   if (item.title.toLowerCase().includes(searchTerm.toLowerCase())) {
+  //     return item;
+  //   } else {
+  //     return;
+  //   }
+  // });
 
-  const productPerPage = 9;
-  const visitedPage = pageNumber * productPerPage;
-  const displayPage = searchedProduct.slice(visitedPage, visitedPage + productPerPage);
-  // console.log(displayPage);
-  const pageCount = Math.ceil(searchedProduct.length / productPerPage);
+  // const productPerPage = 9;
+  // const visitedPage = pageNumber * productPerPage;
+  // const displayPage = searchedProduct.slice(visitedPage, visitedPage + productPerPage);
+  // // console.log(displayPage);
+  // const pageCount = Math.ceil(searchedProduct.length / productPerPage);
 
-  const changePage = ({ selected }) => {
-    setPageNumber(selected);
-  };
+  // const changePage = ({ selected }) => {
+  //   setPageNumber(selected);
+  // };
 
   //category
-  const [allProduct, setAllProduct] = useState(displayPage);
+  const [allProduct, setAllProduct] = useState(products);
   const [category, setCategory] = useState('ALL');
 
   useEffect(() => {
     if (category === 'All') {
-      setAllProduct(displayPage);
+      setAllProduct(products);
     }
     if (category === 'Burger') {
-      const filterProducts = displayPage.filter((item) => item.category === 'Burger');
+      const filterProducts = products.filter((item) => item.category === 'Burger');
       setAllProduct(filterProducts);
     }
     if (category === 'Pizza') {
-      const filterProducts = displayPage.filter((item) => item.category === 'Pizza');
+      const filterProducts = products.filter((item) => item.category === 'Pizza');
       setAllProduct(filterProducts);
     }
     if (category === 'Bread') {
-      const filterProducts = displayPage.filter((item) => item.category === 'Bread');
+      const filterProducts = products.filter((item) => item.category === 'Bread');
       setAllProduct(filterProducts);
     }
   }, [category]);
+
+  const handleSearch = (e) => {
+    const searchItem = e.target.value;
+
+    const searchedProduct = products.filter((item) => item.title.toLowerCase().includes(searchItem.toLowerCase()));
+    setAllProduct(searchedProduct);
+  };
   return (
     <Helmet title="All foods">
       <Commonsection title="Foods"></Commonsection>
@@ -84,7 +91,7 @@ const AllFoods = () => {
                 </div>
 
                 <div className="search__box">
-                  <input type="text" placeholder="I'm looking for..." value={searchTerm} onChange={(e) => setSearchTerm(e.target.value)} />
+                  <input type="text" placeholder="I'm looking for..." onChange={handleSearch} />
                   <span>
                     <i class="ri-search-line"></i>
                   </span>
@@ -98,16 +105,6 @@ const AllFoods = () => {
                     <ProductCart item={item} />
                   </Col>
                 ))}
-
-                <div>
-                  <ReactPaginate
-                    pageCount={pageCount}
-                    onPageChange={changePage}
-                    previousLabel={'Prev'}
-                    nextLabel={'Next'}
-                    containerClassName=" paginationBttns "
-                  />
-                </div>
               </Row>
             </Col>
           </Row>
