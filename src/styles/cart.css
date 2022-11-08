@@ -1,0 +1,101 @@
+.table {
+  border: 1px solid #e7e7e7;
+}
+.table img {
+  width: 130px;
+  object-fit: cover;
+}
+.table th,
+.table td {
+  padding: 1rem 0.8rem !important;
+  font-size: 0.9rem;
+  text-transform: uppercase;
+}
+
+.table td:last-child {
+  text-align: right;
+  font-size: 1.3rem;
+}
+.table td.price {
+  color: #df2020;
+}
+.table td p {
+  margin-bottom: 8px;
+}
+.table td .cart__item-quantity {
+  margin-top: 0;
+  border: 1px solid #e7e7e7;
+  display: inline-flex;
+  border-radius: 0;
+}
+.table td .cart__item-quantity button {
+  border: 0;
+}
+.table td .btn__delete {
+  padding: 12px;
+  margin-left: 6px;
+  cursor: pointer;
+  border-radius: 50%;
+  display: inline-flex;
+}
+.table td .btn__delete:hover {
+  background-color: #fde4e4;
+  transition: 0.4s;
+}
+
+.cart__checkout {
+  background-color: #f8bebe24;
+}
+.cart__checkout h3 {
+  background-color: #fde4e4;
+  padding: 15px 20px;
+  text-transform: uppercase;
+  font-size: 1rem;
+  font-weight: 600;
+  box-sizing: border-box;
+}
+.cart__checkout-cont {
+  padding: 15px 20px;
+  box-sizing: border-box;
+}
+.cart-total {
+  box-sizing: border-box;
+  padding: 15px 20px;
+}
+.cart__inp {
+  margin-top: 1rem;
+}
+.cart__inp:first-child {
+  margin-top: 0;
+}
+.cart__inp label,
+.cart-total__subtotal-title {
+  font-size: 0.9rem;
+  font-weight: 600;
+}
+.cart__inp input,
+.cart__inp textarea {
+  width: 100%;
+  border: 1px solid #e7e7e7;
+  padding: 10px;
+  box-sizing: border-box;
+  outline: none;
+  font-size: 0.9rem;
+}
+.cart-total__subtotal {
+  display: flex;
+  justify-content: space-between;
+  border-top: 1px solid #e7e7e7;
+  padding-top: 1.3rem;
+}
+.cart-total__subtotal-price {
+  font-weight: 700;
+  font-size: 1.4rem;
+  line-height: 1.2;
+}
+.cart-tax {
+  font-size: 0.9rem;
+  text-align: right;
+  color: #777;
+  letter-spacing: -0.6px;
+}

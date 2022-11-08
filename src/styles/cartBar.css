@@ -54,6 +54,7 @@
   bottom: 0;
   padding: 30px;
   z-index: 20;
+  background-color: #fff;
 }
 .cart__bottom h6 {
   /* color: #fff; */

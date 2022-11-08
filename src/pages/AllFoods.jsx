@@ -64,6 +64,38 @@ const AllFoods = () => {
     const searchedProduct = products.filter((item) => item.title.toLowerCase().includes(searchItem.toLowerCase()));
     setAllProduct(searchedProduct);
   };
+
+  const handleFilter = (e) => {
+    const filter = e.target.value;
+    if (filter === 'all') {
+      console.log(products);
+      setAllProduct(products);
+    }
+    if (filter === 'title-ascending') {
+      setAllProduct(
+        products.sort((a, b) => {
+          const nameA = a.title.toUpperCase(); // ignore upper and lowercase
+          const nameB = b.title.toUpperCase(); // ignore upper and lowercase
+          if (nameA < nameB) {
+            return -1;
+          }
+          if (nameA > nameB) {
+            return 1;
+          }
+          return 0;
+        }),
+      );
+    }
+    if (filter === 'title-descending') {
+    }
+    if (filter === 'price-ascending') {
+      setAllProduct(products.sort((a, b) => a.price - b.price));
+    }
+    if (filter === 'price-descending') {
+      setAllProduct(products.sort((a, b) => b.price - a.price));
+    }
+  };
+
   return (
     <Helmet title="All foods">
       <Commonsection title="Foods"></Commonsection>
@@ -81,8 +113,8 @@ const AllFoods = () => {
                 </ul>
 
                 <div className="select">
-                  <select>
-                    <option value="best-selling">Best selling</option>
+                  <select onChange={handleFilter}>
+                    <option value="all">All Products</option>
                     <option value="title-ascending">Alphabetically, A-Z</option>
                     <option value="title-descending">Alphabetically, Z-A</option>
                     <option value="price-ascending">Price, low to high</option>
@@ -101,7 +133,7 @@ const AllFoods = () => {
             <Col lg="9">
               <Row>
                 {allProduct.map((item, index) => (
-                  <Col lg="4" key={index} className="mt-4">
+                  <Col lg="4" md="4" sm="6" key={index} className="mt-4">
                     <ProductCart item={item} />
                   </Col>
                 ))}
