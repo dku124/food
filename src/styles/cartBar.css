@@ -21,7 +21,7 @@
 }
 .cart__list {
   overflow-y: auto;
-  height: 58%;
+  height: 58vh;
 }
 .cart__list li:first-child {
   margin-top: 0;

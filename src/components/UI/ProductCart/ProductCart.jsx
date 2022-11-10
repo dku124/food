@@ -55,10 +55,10 @@ const ProductCart = ({ item }) => {
     );
     if (!wishBtn) {
       wishListBtn.current.classList.add('favorite');
-      console.log(!wishBtn);
+      // console.log(!wishBtn);
     } else {
       wishListBtn.current.classList.remove('favorite');
-      console.log(!wishBtn);
+      // console.log(!wishBtn);
     }
   };
 
