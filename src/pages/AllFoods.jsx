@@ -8,7 +8,6 @@ import '../styles/allFoods.css';
 import ProductCart from '../components/UI/ProductCart/ProductCart';
 import { useState } from 'react';
 import { useEffect } from 'react';
-import ReactPaginate from 'react-paginate';
 
 const AllFoods = () => {
   // const [searchTerm, setSearchTerm] = useState('');

@@ -46,6 +46,10 @@ const Header = () => {
     dispatch(cartVisibleAction.toggle());
   };
 
+  //favorite
+  const favoriteItem = useSelector((state) => state.favorite.favoriteItem);
+  const totalQuantityFavorite = favoriteItem.length;
+
   return (
     <header className="header" ref={headerRef}>
       <Container>
@@ -67,8 +71,10 @@ const Header = () => {
 
           <div className="nav__icons">
             <div className="icon fav__icon">
-              <i class="ri-heart-line"></i>
-              <span className="badge">2</span>
+              <Link to="/favorite">
+                <i class="ri-heart-line"></i>
+                <span className="badge">{totalQuantityFavorite}</span>
+              </Link>
             </div>
             <div className="icon cart__icon" onClick={toggleCartBar}>
               <i class="ri-shopping-cart-line"></i>

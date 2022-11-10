@@ -2,7 +2,6 @@ import React from 'react';
 import { Col, Container, Row, Table } from 'reactstrap';
 import Helmet from '../components/Helmet/Helmet';
 import Commonsection from '../components/UI/CommonSection/Commonsection';
-import img1 from '../assets/images/product_01.1.jpg';
 
 import '../styles/cart.css';
 import { useSelector } from 'react-redux';

@@ -1,9 +1,11 @@
 import React from 'react';
 import { useRef } from 'react';
+import { useSelector } from 'react-redux';
 import { useDispatch } from 'react-redux';
 import { Link } from 'react-router-dom';
 import { ButtonGroup } from 'reactstrap';
 import { cartActions } from '../../../store/CartSlide/cartSlide';
+import { favoriteActions } from '../../../store/FavoriteSlice/FavoriteSlice';
 import { showActions } from '../../../store/QuickviewItemSlice/QuickviewItemSlice';
 import { viewAction } from '../../../store/QuickviewProduct/QuickviewProduct';
 
@@ -39,9 +41,25 @@ const ProductCart = ({ item }) => {
   };
 
   //add to wishlist
+  const wishBtn = useSelector((state) => state.favorite.wishBtn);
   const wishListBtn = useRef(null);
   const addToWishlist = () => {
-    wishListBtn.current.classList.toggle('favorite');
+    wishListBtn.current.classList.add('favorite');
+    dispatch(
+      favoriteActions.addToFavorite({
+        id,
+        title,
+        price,
+        image01,
+      }),
+    );
+    if (!wishBtn) {
+      wishListBtn.current.classList.add('favorite');
+      console.log(!wishBtn);
+    } else {
+      wishListBtn.current.classList.remove('favorite');
+      console.log(!wishBtn);
+    }
   };
 
   return (
