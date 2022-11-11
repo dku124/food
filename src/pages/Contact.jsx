@@ -6,7 +6,7 @@ import '../styles/contact.css';
 const Contact = () => {
   return (
     <Helmet title="Contact us">
-      <div className="contact">
+      <section className="contact">
         <Container>
           <Row>
             <Col lg="12">
@@ -71,7 +71,7 @@ const Contact = () => {
             </Col>
           </Row>
         </Container>
-      </div>
+      </section>
     </Helmet>
   );
 };
