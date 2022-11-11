@@ -194,6 +194,7 @@
 }
 .tab__content {
   margin-top: 2rem;
+  transition: 0.4s;
 }
 .tab__content p,
 .tab__content li {

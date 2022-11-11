@@ -12,6 +12,9 @@ import { useEffect } from 'react';
 import { useDispatch } from 'react-redux';
 import { cartActions } from '../store/CartSlide/cartSlide';
 import Review from '../components/UI/Review/Review';
+import ProductCart from '../components/UI/ProductCart/ProductCart';
+
+import Slider from 'react-slick';
 
 const FoodDetails = () => {
   const { id } = useParams();
@@ -67,6 +70,47 @@ const FoodDetails = () => {
     dispatch(cartActions.addItem({ id, image01, title, price }));
   };
 
+  //you may also like
+  const [like, setLike] = useState(products);
+  useEffect(() => {
+    const filterLikeProducts = products.filter((item) => item.category === category);
+    setLike(filterLikeProducts);
+  }, []);
+
+  // slide you may also like
+  var settings = {
+    dots: true,
+    infinite: true,
+    speed: 500,
+    slidesToShow: 4,
+    slidesToScroll: 1,
+    touchMove: true,
+    useCSS: true,
+    // autoplay: true,
+    responsive: [
+      {
+        breakpoint: 1400,
+        settings: {
+          slidesToShow: 4,
+          slidesToScroll: 4,
+        },
+      },
+      {
+        breakpoint: 1024,
+        settings: {
+          slidesToShow: 3,
+          slidesToScroll: 3,
+        },
+      },
+      {
+        breakpoint: 768,
+        settings: {
+          slidesToShow: 1,
+          slidesToScroll: 1,
+        },
+      },
+    ],
+  };
   return (
     <Helmet title={title}>
       <Commonsection title={title} />
@@ -181,6 +225,17 @@ const FoodDetails = () => {
               </div>
             </Col>
           </Row>
+        </Container>
+      </section>
+
+      <section>
+        <h4 className="like__title text-center mb-4">You may also like</h4>
+        <Container>
+          <Slider {...settings}>
+            {like.map((item, index) => (
+              <ProductCart item={item} key={index} />
+            ))}
+          </Slider>
         </Container>
       </section>
     </Helmet>
