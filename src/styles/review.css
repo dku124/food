@@ -1,0 +1,128 @@
+.rv__star {
+  color: #f7bc3d;
+}
+.rv__rate-caption {
+  color: #868686;
+  font-size: 0.9rem;
+  margin-top: 0.6rem;
+}
+.rv__rate {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.rv__rate-btn {
+  display: block;
+  padding: 12px 26px;
+  border: 2px solid #000;
+  color: #000;
+  font-size: 0.9rem;
+  margin-top: 1rem;
+}
+.rv__rate-btn:hover {
+  color: #fff;
+  background-color: #e25b5b;
+  border: 2px solid #e25b5b;
+}
+.rv__form h4 {
+  font-size: 1.1rem;
+  margin-bottom: 2rem;
+}
+.rv__form-contact .container {
+  padding: 0;
+}
+
+.rv__form-contact {
+  display: flex;
+  flex-direction: column;
+}
+.rv__form-lbl {
+  color: #000;
+  font-size: 0.9rem;
+  margin-bottom: 0.5rem;
+}
+.rv__form-inp {
+  padding: 1rem;
+  font-size: 0.9rem;
+  border: 1px solid #ccc;
+}
+.rv__form-review {
+  margin-top: 1.4rem;
+}
+.rv__form-rating {
+  display: flex;
+  align-items: center;
+  column-gap: 1rem;
+}
+.rv__form-rating p {
+  margin-bottom: 0;
+}
+.rv__form-rating span {
+  color: #f7bc3d;
+}
+.rv__form-rating span i {
+  cursor: pointer;
+}
+.rv__form-title {
+  display: flex;
+  flex-direction: column;
+  margin-top: 0.6rem;
+}
+.rv__form-body {
+  display: flex;
+  flex-direction: column;
+  margin-top: 1rem;
+}
+.rv__form-txt {
+  border: 1px solid #ccc;
+  padding: 1rem;
+  font-size: 0.9rem;
+}
+.rv__form-btn {
+  text-align: center;
+}
+.rv__form-btn button {
+  padding: 12px 24px;
+  border: 2px solid #000;
+  margin-top: 2rem;
+  font-size: 0.8rem;
+}
+.rv__reviews {
+  margin-top: 2rem;
+  padding-top: 2rem;
+  border-top: 1px solid #e7e7e7;
+}
+.rv__form {
+  display: none;
+  margin-top: 2rem;
+  padding-top: 3rem;
+  border-top: 1px solid #e7e7e7;
+}
+.active__form {
+  display: block;
+}
+.rv__reviews-cont {
+  border: 1px solid #e7e7e7;
+  padding: 1rem;
+  position: relative;
+}
+.rv__reviews-user {
+  font-size: 0.9rem;
+  font-style: italic;
+}
+.rv__reviews-user .txt-bold {
+  font-weight: 600;
+}
+.rv__reviews-footer {
+  font-size: 0.9rem;
+  color: #868686;
+}
+.rv__reviews-report {
+  font-size: 0.8rem;
+  color: #e25b5b;
+  padding: 5px;
+  position: absolute;
+  top: 0;
+  right: 0;
+  text-decoration: underline;
+}

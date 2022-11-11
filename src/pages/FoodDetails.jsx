@@ -11,6 +11,7 @@ import { useState } from 'react';
 import { useEffect } from 'react';
 import { useDispatch } from 'react-redux';
 import { cartActions } from '../store/CartSlide/cartSlide';
+import Review from '../components/UI/Review/Review';
 
 const FoodDetails = () => {
   const { id } = useParams();
@@ -29,16 +30,33 @@ const FoodDetails = () => {
 
   useEffect(() => {
     if (tab === 'desc') {
-      setContentTab(desc);
+      setContentTab(<p>{desc}</p>);
     }
     if (tab === 'shipping') {
-      setContentTab(<p>Shipping</p>);
+      setContentTab(
+        <p>
+          For orders placed before 7am AEDT, we endeavour to process the same business day. Orders placed after 11am AEDT will be processed the next business
+          day.
+          <br /> During sale events and new collection launches, there may be a slighly longer processing time.
+          <br />
+          All Auguste orders are hand-picked and packed with love from Byron Bay, Australie.
+        </p>,
+      );
     }
     if (tab === 'refurn') {
-      setContentTab(<p>refurn</p>);
+      setContentTab(
+        <div>
+          <p>You can choose between a refund or a credit note on full priced items.</p>
+          <ul>
+            <li>Item(s) must be returned in their original condition and packaging: unworn, unwashed and with all tags attached.</li>
+            <li>Return shipping methods and associated costs are the responsibility of the customer.</li>
+            <li>Sale items can not be refunded for change of mind.</li>
+          </ul>
+        </div>,
+      );
     }
     if (tab === 'review') {
-      setContentTab(<p>review</p>);
+      setContentTab(<Review />);
     }
   }, [tab]);
 
@@ -155,7 +173,7 @@ const FoodDetails = () => {
                   <h5 className={`${tab === 'refurn' ? 'active__tab' : ''}`} onClick={() => setTab('refurn')}>
                     Refurn
                   </h5>
-                  <h5 className={`${tab === 'refurn' ? 'active__tab' : ''}`} onClick={() => setTab('review')}>
+                  <h5 className={`${tab === 'review' ? 'active__tab' : ''}`} onClick={() => setTab('review')}>
                     Review
                   </h5>
                 </div>

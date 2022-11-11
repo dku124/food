@@ -16,7 +16,7 @@
 }
 
 .item__desc {
-  padding-top: 2rem;
+  padding: 2rem 3rem;
 }
 
 .badge__star {
@@ -194,4 +194,13 @@
 }
 .tab__content {
   margin-top: 2rem;
+}
+.tab__content p,
+.tab__content li {
+  font-size: 0.9rem;
+  color: #868686;
+}
+.tab__content li {
+  list-style: disc;
+  margin-left: 2rem;
 }

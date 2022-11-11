@@ -16,7 +16,6 @@ const CartBar = () => {
 
   //work with cart bar
   const cartProduct = useSelector((state) => state.cart.cartItem);
-  console.log(cartProduct);
 
   return (
     <div className="cart__container">
