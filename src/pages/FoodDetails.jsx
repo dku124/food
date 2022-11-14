@@ -111,6 +111,26 @@ const FoodDetails = () => {
       },
     ],
   };
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [itemDetail]);
+
+  const [quantityNumber, setQuantityNumber] = useState('');
+
+  // add to check out
+  const addToCheckout = () => {
+    dispatch(
+      cartActions.addItem({
+        id,
+        title,
+        price,
+        image01,
+        quantity: Number(quantityNumber),
+      }),
+    );
+  };
+
   return (
     <Helmet title={title}>
       <Commonsection title={title} />
@@ -151,13 +171,7 @@ const FoodDetails = () => {
                   </div>
                   <div className="item__button-group">
                     <div className="item__button-quantity">
-                      <button>
-                        <i class="ri-subtract-line"></i>
-                      </button>
-                      <span>{quantity}0</span>
-                      <button>
-                        <i class="ri-add-line"></i>
-                      </button>
+                      <input type="text" placeholder="0" onChange={(event) => setQuantityNumber(event.target.value)} />
                     </div>
                     <button className="add__btn" onClick={addToCart}>
                       ADD TO CART
@@ -167,7 +181,9 @@ const FoodDetails = () => {
                     </button>
                   </div>
                   <div class="buy__btn">
-                    <Link to={'/checkout'}>BUY IT NOW</Link>
+                    <Link to={'/checkout'} onClick={addToCheckout}>
+                      BUY IT NOW
+                    </Link>
                   </div>
                 </div>
                 <div className="organization">

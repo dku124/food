@@ -22,7 +22,7 @@ export const cartSlice = createSlice({
           image02: newItem.image02,
           image03: newItem.image03,
           price: newItem.price,
-          quantity: 1,
+          quantity: newItem.quantity || 1,
           totalPrice: newItem.price,
         });
       } else {

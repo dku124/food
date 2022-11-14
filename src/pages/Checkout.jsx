@@ -11,6 +11,8 @@ import '../styles/checkout.css';
 const Checkout = () => {
   const items = useSelector((state) => state.cart.cartItem);
 
+  console.log(items);
+
   const totalAmount = useSelector((state) => state.cart.totalAmount);
 
   const formContact = useRef();
@@ -78,8 +80,8 @@ const Checkout = () => {
                       </div>
                     </div>
                     <div className="form__chb">
-                      <input type="checkbox" id="chb" />
-                      <label for="chb">Save this information for next time</label>
+                      <input type="checkbox" id="chb2" />
+                      <label for="chb2">Save this information for next time</label>
                     </div>
                   </div>
 
