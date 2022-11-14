@@ -1,3 +1,12 @@
+.form {
+  border-right: 1px solid #ccc;
+}
+.form__list {
+  padding: 2rem;
+}
+.order__content {
+  padding: 2rem;
+}
 .checkout form h4 {
   font-size: 1.2rem;
 }
@@ -11,4 +20,199 @@
 
 .form__inp {
   margin-top: 1rem;
+}
+
+.form__group {
+  display: flex;
+  justify-content: space-between;
+  column-gap: 1rem;
+}
+.form__chb {
+  margin-top: 0.2rem;
+}
+.form__chb label {
+  font-size: 0.9rem;
+  color: #737373;
+  margin-left: 0.4rem;
+  cursor: pointer;
+}
+.billing {
+  margin-top: 2rem;
+}
+.billing h4 {
+  margin-bottom: 0;
+}
+
+.form__footer {
+  margin-top: 1rem;
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.9rem;
+  font-weight: 600;
+  align-items: center;
+}
+.form__footer button {
+  background-color: #1878b9;
+  color: #fff;
+  padding: 1rem 1.3rem;
+  border-radius: 8px;
+}
+.form__footer a {
+  display: flex;
+}
+.order__img {
+  width: 80px;
+  height: 80px;
+  position: relative;
+}
+.order__img img {
+  width: 100%;
+  border: 1px solid #eee;
+  border-radius: 10px;
+}
+.order__img span {
+  position: absolute;
+  top: -9px;
+  right: -9px;
+  z-index: 1;
+  background-color: #737373;
+  color: #fff;
+  font-weight: 600;
+  font-size: 0.8rem;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.order__item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 1rem;
+}
+.order__info {
+  display: flex;
+  align-items: center;
+  column-gap: 1rem;
+  justify-content: space-between;
+}
+.order__title p {
+  margin-bottom: 0;
+  font-size: 0.9rem;
+  color: #323232;
+  font-weight: 600;
+}
+.order__title span {
+  font-size: 0.8rem;
+  color: #717171;
+}
+.order__price {
+  font-size: 0.9rem;
+  color: #df2020;
+  font-weight: 600;
+  padding: 0 1rem;
+}
+.order__discount {
+  margin-top: 1.2rem;
+  padding: 1rem 0;
+  border-top: 1px solid #eee;
+}
+.order__discount button {
+  background-color: #c8c8c8;
+  font-size: 0.9rem;
+  color: #fff;
+  font-weight: 600;
+  padding: 0.7rem;
+  box-sizing: border-box;
+  border-radius: 5px;
+}
+.order__discount {
+  display: flex;
+  column-gap: 1rem;
+}
+.order__discount .form__inp {
+  margin-top: 0;
+  flex: 1;
+}
+.order__bottom {
+  padding: 1rem 0;
+  border-top: 1px solid #eee;
+  display: flex;
+  justify-content: space-between;
+}
+.price__number span {
+  font-size: 0.7rem;
+  color: #717171;
+}
+.price__number strong {
+  font-size: 1.2rem;
+  margin-left: 0.4rem;
+}
+.order__list {
+  max-height: 375px;
+  overflow-y: scroll;
+}
+.form__contact.payment__active {
+  display: none;
+}
+.payment {
+  display: none;
+}
+.payment.payment__active {
+  display: block;
+}
+.payment__box {
+  padding: 0 0.9rem;
+  border: 1px solid #d9d9d9;
+  border-radius: 5px;
+}
+.payment__box p {
+  padding: 0.7rem 0;
+  font-size: 0.9rem;
+  border-top: 1px solid #e7e7e7;
+  margin: 0;
+  display: flex;
+  align-items: center;
+}
+.payment__box p:first-child {
+  border-top: 0;
+}
+
+.payment__title {
+  width: 100px;
+  color: #737373;
+}
+.payment__text {
+  flex: 1;
+}
+.payment__change {
+  color: #1878b9;
+  font-size: 0.8rem;
+}
+
+.payment__content {
+  margin-top: 3rem;
+}
+.payment__content h4 {
+  font-size: 1.1rem;
+  color: #333;
+  font-weight: 400;
+}
+.payment__content-bill {
+  height: 150px;
+  background-color: #e7e7e7;
+  border: 1px solid #d9d9d9;
+  border-radius: 5px;
+}
+.breadcrum a,
+.breadcrum span {
+  font-size: 0.9rem;
+  display: inline-flex;
+  cursor: pointer;
+}
+.breadcrum a:hover,
+.breadcrum span:hover {
+  color: #1878b9;
 }

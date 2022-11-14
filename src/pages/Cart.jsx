@@ -7,6 +7,7 @@ import '../styles/cart.css';
 import { useSelector } from 'react-redux';
 import { useDispatch } from 'react-redux';
 import { cartActions } from '../store/CartSlide/cartSlide';
+import { Link } from 'react-router-dom';
 
 const Cart = () => {
   const cartItem = useSelector((state) => state.cart.cartItem);
@@ -73,7 +74,7 @@ const Cart = () => {
                   </p>
                   <div class="cart__bottom-btn">
                     <div class="btn btn__checkout">
-                      <a href="/checkout">Checkout</a>
+                      <Link to="/checkout">Checkout</Link>
                     </div>
                   </div>
                 </div>
