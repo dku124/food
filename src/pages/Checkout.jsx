@@ -11,8 +11,6 @@ import '../styles/checkout.css';
 const Checkout = () => {
   const items = useSelector((state) => state.cart.cartItem);
 
-  console.log(items);
-
   const totalAmount = useSelector((state) => state.cart.totalAmount);
 
   const formContact = useRef();

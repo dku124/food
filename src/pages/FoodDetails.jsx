@@ -6,7 +6,6 @@ import products from '../assets/fake-data/products';
 import { Container, Row, Col } from 'reactstrap';
 
 import '../styles/foodDetail.css';
-import { useSelector } from 'react-redux';
 import { useState } from 'react';
 import { useEffect } from 'react';
 import { useDispatch } from 'react-redux';
@@ -23,7 +22,7 @@ const FoodDetails = () => {
   const itemDetail = products.find((item) => item.id === id);
   // console.log(itemDetail);
 
-  const { title, image01, image02, image03, category, desc, price, quantity } = itemDetail;
+  const { title, image01, image02, image03, category, desc, price } = itemDetail;
   // set image display
   const [selectImg, setSelectImg] = useState();
 

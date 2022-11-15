@@ -1,0 +1,92 @@
+.acc__content {
+  max-width: 600px;
+  border: 1px solid #ccc;
+  margin: 0 auto;
+}
+
+.acc__detail {
+  padding: 1rem 1.3rem;
+}
+.acc__tab-title {
+  padding: 1rem;
+  text-align: center;
+  text-transform: uppercase;
+  font-size: 0.9rem;
+  flex: 1;
+  cursor: pointer;
+}
+
+.acc__tab {
+  display: flex;
+}
+
+/* .acc__tab-title:hover {
+  background-color: #df2020;
+  color: #fff;
+} */
+
+.acc__tab-active {
+  background-color: #df2020;
+  color: #fff;
+}
+
+.acc__desc {
+  display: none;
+}
+.acc__desc-active {
+  display: block;
+}
+.acc__form-inp input {
+  width: 100%;
+  border: 1px solid #ccc;
+  outline: none;
+  padding: 0.7rem 1rem;
+  margin-bottom: 1rem;
+}
+.acc__form-btn {
+  padding: 0.6rem;
+  text-align: center;
+  display: block;
+  width: 100%;
+  background-color: #fde4e4;
+  font-size: 0.9rem;
+}
+.acc__form-note {
+  font-size: 0.9rem;
+  text-align: center;
+  display: inline-block;
+  color: #df2020;
+  margin-top: 0.5rem;
+  font-style: italic;
+}
+
+.acc__form-group {
+  display: flex;
+  justify-content: space-between;
+  column-gap: 1rem;
+}
+.acc__form-group .acc__form-inp {
+  flex: 1;
+}
+.reset__pass-header {
+  text-align: center;
+}
+.reset__pass-header h4 {
+  font-size: 1rem;
+}
+.reset__pass-header p {
+  font-size: 0.9rem;
+  color: #bbb;
+  font-style: italic;
+}
+.reset__pass {
+  display: none;
+}
+
+.reset__pass.pass__active {
+  display: block;
+}
+
+.acc__form.pass__active {
+  display: none;
+}
