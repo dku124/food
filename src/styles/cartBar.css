@@ -19,6 +19,7 @@
   background-color: #fff;
   overflow: hidden;
 }
+
 .cart__list {
   overflow-y: auto;
   height: 58vh;
@@ -110,4 +111,10 @@
   background-color: #fde4e4;
   border-color: #fde4e4;
   color: #df2020;
+}
+
+@media screen and (max-width: 576px) {
+  .cart__bar {
+    width: 100%;
+  }
 }

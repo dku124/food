@@ -12,6 +12,7 @@ import { Link } from 'react-router-dom';
 const Cart = () => {
   const cartItem = useSelector((state) => state.cart.cartItem);
   const totalAmount = useSelector((state) => state.cart.totalAmount);
+  console.log(cartItem);
 
   return (
     <Helmet title="Your cart">
@@ -48,7 +49,7 @@ const Cart = () => {
                 <h3>Checkout</h3>
                 <div className="cart__checkout-cont">
                   <div className="cart__inp">
-                    <label for="inp" class="form-label">
+                    <label htmlFor="inp" class="form-label">
                       Note for seller
                     </label>
                     <div class="input-group">
@@ -56,7 +57,7 @@ const Cart = () => {
                     </div>
                   </div>
                   <div className="cart__inp">
-                    <label for="inp" class="form-label">
+                    <label htmlFor="inp" class="form-label">
                       Discount code - Applied at checkout
                     </label>
                     <div class="input-group">

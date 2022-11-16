@@ -35,13 +35,13 @@ const Contact = () => {
                       <Container>
                         <Row>
                           <Col lg="6" className="rv__form-contact">
-                            <label className="rv__form-lbl" for="inp1">
+                            <label className="rv__form-lbl" htmlFor="inp1">
                               Name
                             </label>
                             <input type="text" className="rv__form-inp" placeholder="Enter your name" id="inp1" />
                           </Col>
                           <Col lg="6" className="rv__form-contact">
-                            <label className="rv__form-lbl" for="inp2">
+                            <label className="rv__form-lbl" htmlFor="inp2">
                               Email
                             </label>
                             <input type="text" className="rv__form-inp" placeholder="abc@gmail.com" id="inp2" />
@@ -51,13 +51,13 @@ const Contact = () => {
                     </fieldset>
                     <fieldset className="rv__form-review">
                       <div className="rv__form-title">
-                        <label className="rv__form-lbl" for="inp3">
+                        <label className="rv__form-lbl" htmlFor="inp3">
                           Phone Number
                         </label>
                         <input type="number" className="rv__form-inp" placeholder="0123456789" id="inp3" />
                       </div>
                       <div className="rv__form-body">
-                        <label className="rv__form-lbl" for="inp4">
+                        <label className="rv__form-lbl" htmlFor="inp4">
                           Message
                         </label>
                         <textarea class="rv__form-txt" rows="6" placeholder="Write your comments here" id="inp4"></textarea>

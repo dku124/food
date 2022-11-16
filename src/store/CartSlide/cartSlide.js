@@ -1,9 +1,21 @@
 import { createSlice } from '@reduxjs/toolkit';
 
+const items = localStorage.getItem('cartItem') !== null ? JSON.parse(localStorage.getItem('cartItem')) : [];
+
+const totalAmount = localStorage.getItem('totalAmount') !== null ? JSON.parse(localStorage.getItem('totalAmount')) : 0;
+
+const totalQuantity = localStorage.getItem('totalQuantity') !== null ? JSON.parse(localStorage.getItem('totalQuantity')) : 0;
+
+const setItemFunc = (item, totalAmount, totalQuantity) => {
+  localStorage.setItem('cartItem', JSON.stringify(item));
+  localStorage.setItem('totalAmount', JSON.stringify(totalAmount));
+  localStorage.setItem('totalQuantity', JSON.stringify(totalQuantity));
+};
+
 const initialState = {
-  cartItem: [],
-  totalAmount: 0,
-  totalQuantity: 0,
+  cartItem: items,
+  totalQuantity: totalQuantity,
+  totalAmount: totalAmount,
 };
 
 export const cartSlice = createSlice({
@@ -30,7 +42,13 @@ export const cartSlice = createSlice({
         existingItem.totalPrice = Number(existingItem.totalPrice) + Number(newItem.price);
       }
       state.totalAmount = state.cartItem.reduce((total, item) => total + Number(item.price) * Number(item.quantity), 0);
-      // console.log(state.cartItem.length);
+      console.log(state.cartItem.length);
+
+      setItemFunc(
+        state.cartItem.map((item) => item),
+        state.totalAmount,
+        state.totalQuantity,
+      );
     },
 
     decreaseItem: (state, action) => {
@@ -44,6 +62,12 @@ export const cartSlice = createSlice({
         existingItem.totalPrice = Number(existingItem.totalPrice) - Number(existingItem.price);
       }
       state.totalAmount = state.cartItem.reduce((total, item) => total + Number(item.price) * Number(item.quantity), 0);
+
+      setItemFunc(
+        state.cartItem.map((item) => item),
+        state.totalAmount,
+        state.totalQuantity,
+      );
     },
 
     deleteItem: (state, action) => {
@@ -54,6 +78,12 @@ export const cartSlice = createSlice({
         state.totalQuantity = state.totalQuantity - existingItem.quantity;
       }
       state.totalAmount = state.cartItem.reduce((total, item) => total + Number(item.price) * Number(item.quantity), 0);
+
+      setItemFunc(
+        state.cartItem.map((item) => item),
+        state.totalAmount,
+        state.totalQuantity,
+      );
     },
   },
 });
