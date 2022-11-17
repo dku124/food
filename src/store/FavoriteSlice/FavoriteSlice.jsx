@@ -1,7 +1,13 @@
 import { createSlice } from '@reduxjs/toolkit';
 
+const items = localStorage.getItem('favoriteItem') !== null ? JSON.parse(localStorage.getItem('favoriteItem')) : [];
+
+const setItemFavoriteFunc = (item) => {
+  localStorage.setItem('favoriteItem', JSON.stringify(item));
+};
+
 const initialState = {
-  favoriteItem: [],
+  favoriteItem: items,
   wishBtn: false,
 };
 
@@ -22,8 +28,10 @@ export const favoriteSlice = createSlice({
           price: newItemFavorite.price,
           quantity: 1,
         });
+        state.wishBtn = !state.wishBtn;
       }
-      state.wishBtn = !state.wishBtn;
+
+      setItemFavoriteFunc(state.favoriteItem.map((item) => item));
     },
 
     deleteFavoriteItem: (state, action) => {
@@ -32,6 +40,7 @@ export const favoriteSlice = createSlice({
       if (existingItem) {
         state.favoriteItem = state.favoriteItem.filter((item) => item.id !== id);
       }
+      setItemFavoriteFunc(state.favoriteItem.map((item) => item));
     },
   },
 });

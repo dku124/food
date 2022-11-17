@@ -12,7 +12,7 @@ import { Link } from 'react-router-dom';
 const Cart = () => {
   const cartItem = useSelector((state) => state.cart.cartItem);
   const totalAmount = useSelector((state) => state.cart.totalAmount);
-  console.log(cartItem);
+  // console.log(cartItem);
 
   return (
     <Helmet title="Your cart">

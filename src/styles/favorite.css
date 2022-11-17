@@ -1,3 +1,6 @@
+.wishlist {
+  min-height: 360px;
+}
 .favorite__item img {
   width: 150px;
   object-fit: cover;

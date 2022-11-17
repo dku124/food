@@ -10,19 +10,23 @@ import '../styles/favorite.css';
 
 const Favorite = () => {
   const favoriteItems = useSelector((state) => state.favorite.favoriteItem);
-  // console.log(favoriteItems);
+  console.log(favoriteItems);
 
   return (
     <Helmet title="Wishlist">
       <Commonsection title="Wishlist" />
-      <section>
+      <section className="wishlist">
         <Container>
           <Row>
-            {favoriteItems.map((item, index) => (
-              <Col lg="6" className="mt-4" key={index}>
-                <FavoriteItem item={item} />
-              </Col>
-            ))}
+            {favoriteItems.length === 0 ? (
+              <h3 className="text-center">No item</h3>
+            ) : (
+              favoriteItems.map((item, index) => (
+                <Col lg="6" className="mt-4" key={index}>
+                  <FavoriteItem item={item} />
+                </Col>
+              ))
+            )}
           </Row>
         </Container>
       </section>

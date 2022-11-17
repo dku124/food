@@ -1,21 +1,24 @@
 import { createSlice } from '@reduxjs/toolkit';
 
-const items = localStorage.getItem('cartItem') !== null ? JSON.parse(localStorage.getItem('cartItem')) : [];
+// const items = localStorage.getItem('cartItem') !== null ? JSON.parse(localStorage.getItem('cartItem')) : [];
 
-const totalAmount = localStorage.getItem('totalAmount') !== null ? JSON.parse(localStorage.getItem('totalAmount')) : 0;
+// const totalAmount = localStorage.getItem('totalAmount') !== null ? JSON.parse(localStorage.getItem('totalAmount')) : 0;
 
-const totalQuantity = localStorage.getItem('totalQuantity') !== null ? JSON.parse(localStorage.getItem('totalQuantity')) : 0;
+// const totalQuantity = localStorage.getItem('totalQuantity') !== null ? JSON.parse(localStorage.getItem('totalQuantity')) : 0;
 
-const setItemFunc = (item, totalAmount, totalQuantity) => {
-  localStorage.setItem('cartItem', JSON.stringify(item));
-  localStorage.setItem('totalAmount', JSON.stringify(totalAmount));
-  localStorage.setItem('totalQuantity', JSON.stringify(totalQuantity));
-};
+// const setItemFunc = (item, totalAmount, totalQuantity) => {
+//   localStorage.setItem('cartItem', JSON.stringify(item));
+//   localStorage.setItem('totalAmount', JSON.stringify(totalAmount));
+//   localStorage.setItem('totalQuantity', JSON.stringify(totalQuantity));
+// };
 
 const initialState = {
-  cartItem: items,
-  totalQuantity: totalQuantity,
-  totalAmount: totalAmount,
+  // cartItem: items,
+  // totalQuantity: totalQuantity,
+  // totalAmount: totalAmount,
+  cartItem: [],
+  totalQuantity: 0,
+  totalAmount: 0,
 };
 
 export const cartSlice = createSlice({
@@ -44,11 +47,11 @@ export const cartSlice = createSlice({
       state.totalAmount = state.cartItem.reduce((total, item) => total + Number(item.price) * Number(item.quantity), 0);
       console.log(state.cartItem.length);
 
-      setItemFunc(
-        state.cartItem.map((item) => item),
-        state.totalAmount,
-        state.totalQuantity,
-      );
+      // setItemFunc(
+      //   state.cartItem.map((item) => item),
+      //   state.totalAmount,
+      //   state.totalQuantity,
+      // );
     },
 
     decreaseItem: (state, action) => {
@@ -63,11 +66,11 @@ export const cartSlice = createSlice({
       }
       state.totalAmount = state.cartItem.reduce((total, item) => total + Number(item.price) * Number(item.quantity), 0);
 
-      setItemFunc(
-        state.cartItem.map((item) => item),
-        state.totalAmount,
-        state.totalQuantity,
-      );
+      // setItemFunc(
+      //   state.cartItem.map((item) => item),
+      //   state.totalAmount,
+      //   state.totalQuantity,
+      // );
     },
 
     deleteItem: (state, action) => {
@@ -79,11 +82,11 @@ export const cartSlice = createSlice({
       }
       state.totalAmount = state.cartItem.reduce((total, item) => total + Number(item.price) * Number(item.quantity), 0);
 
-      setItemFunc(
-        state.cartItem.map((item) => item),
-        state.totalAmount,
-        state.totalQuantity,
-      );
+      // setItemFunc(
+      //   state.cartItem.map((item) => item),
+      //   state.totalAmount,
+      //   state.totalQuantity,
+      // );
     },
   },
 });
