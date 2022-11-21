@@ -20,16 +20,10 @@
   display: flex;
 }
 
-/* .acc__tab-title:hover {
-  background-color: #df2020;
-  color: #fff;
-} */
-
 .acc__tab-active {
   background-color: #df2020;
   color: #fff;
 }
-
 .acc__desc {
   display: none;
 }
