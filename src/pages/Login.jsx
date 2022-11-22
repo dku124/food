@@ -70,7 +70,7 @@ const Login = () => {
               uid: user.uid,
               displayName: userName,
               email,
-              photoURl: downloadURL,
+              photoURL: downloadURL,
             });
           });
         },
@@ -81,6 +81,8 @@ const Login = () => {
     }
   };
 
+  console.log(userName, file);
+
   const [emailSignIn, setEmailSignIn] = useState('');
   const [passSignIn, setPassSignIn] = useState('');
 
@@ -89,7 +91,7 @@ const Login = () => {
     try {
       const userCredential = await signInWithEmailAndPassword(auth, emailSignIn, passSignIn);
       const userSignIn = userCredential.user;
-      console.log(userSignIn);
+      // console.log(userSignIn);
       alert('login successfull');
     } catch (error) {
       alert(error.message);

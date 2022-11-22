@@ -5,6 +5,7 @@ import { useSelector } from 'react-redux';
 import { Link, NavLink } from 'react-router-dom';
 import { Container } from 'reactstrap';
 import logo from '../../assets/images/res-logo.png';
+import useAuth from '../../custom-hooks/useAuth';
 import { cartVisibleAction } from '../../store/CartSlide/cartVisible';
 
 import './header.css';
@@ -50,6 +51,16 @@ const Header = () => {
   const favoriteItem = useSelector((state) => state.favorite.favoriteItem);
   const totalQuantityFavorite = favoriteItem.length;
 
+  // display user__info
+  const userInfo = useRef();
+  const userShow = () => {
+    userInfo.current.classList.toggle('user__info-active');
+  };
+
+  // display info user on header bar
+  const currentUser = useAuth();
+  console.log(currentUser);
+
   return (
     <header className="header" ref={headerRef}>
       <Container>
@@ -81,9 +92,24 @@ const Header = () => {
               <span className="badge">{totalQuantity}</span>
             </div>
             <div className="user__icon">
-              <Link to="/login">
-                <i class="ri-user-line"></i>
-              </Link>
+              <a href="#none" onClick={userShow}>
+                {currentUser ? <img src={currentUser.photoURL} alt="" /> : <i class="ri-user-line"></i>}
+              </a>
+              <div className="user__info" ref={userInfo}>
+                <ul>
+                  <li>
+                    <a href="#none">
+                      Signed in as <span>user</span>
+                    </a>
+                  </li>
+                  <li>
+                    <Link to="/login">Sign in</Link>
+                  </li>
+                  <li>
+                    <a href="#none">Sign out</a>
+                  </li>
+                </ul>
+              </div>
             </div>
             <div className="mobile__menu" onClick={toggleMenu}>
               <i class="ri-menu-line"></i>

@@ -53,6 +53,7 @@
   height: 3px;
   background: #df2020;
 }
+
 @keyframes hov {
   from {
     width: 0;
@@ -83,6 +84,55 @@
   background-color: #fff;
   box-shadow: 5px 5px 15px -5px #fde4e4;
   height: 106px;
+}
+.user__icon {
+  position: relative;
+}
+
+.user__info.user__info-active {
+  display: block;
+}
+.user__info {
+  display: none;
+  min-width: 160px;
+  position: absolute;
+  top: 100%;
+  right: -5px;
+  background-color: #fde4e4;
+  padding: 8px 0 !important;
+  border-radius: 8px;
+}
+.user__info::before {
+  content: '';
+  position: absolute;
+  top: -22px;
+  right: 7px;
+  z-index: -1;
+  border-width: 13px;
+  border-style: solid;
+  border-color: transparent transparent #fde4e4 transparent;
+}
+
+.user__info a {
+  display: block;
+  white-space: nowrap;
+  padding: 8px 12px;
+  font-size: 0.9rem;
+}
+.user__info a:hover {
+  background-color: #df2020;
+  color: #fff;
+}
+.user__info li:first-child {
+  border-bottom: 1px solid #ccc;
+}
+.user__info li:first-child a span {
+  color: #df2020;
+  font-size: 1rem;
+}
+.user__info li:first-child a:hover {
+  background-color: #fde4e4;
+  color: #000;
 }
 @media screen and (max-width: 992px) {
   .navigation {
